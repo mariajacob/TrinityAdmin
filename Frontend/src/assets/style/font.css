@@ -1,0 +1,16 @@
+@font-face {
+    font-family: opensans;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: archireg;
+    src: url(../fonts/Archivo-Regular.ttf);
+}
+@font-face {
+    font-family: archiblack;
+    src: url(../fonts/Archivo-Black.ttf);
+}
+@font-face {
+    font-family: archibld;
+    src: url(../fonts/Archivo-Bold.ttf);
+}
