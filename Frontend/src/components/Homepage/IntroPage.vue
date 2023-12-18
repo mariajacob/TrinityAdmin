@@ -8,10 +8,10 @@
               <Vue3Marquee>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="marq"
-                  >Admissions open! Secure your place at Trinity for the upcoming academic year. Don't wait <span style="color: rgba(255, 182, 49, 1)"> apply now!</span></span
+                  >Admissions open! Secure your place at Trinity for the upcoming academic year. Don't wait <span style="color: rgba(255, 182, 49, 1)"> <v-btn @click="contactPage()" variant="text">apply now!</v-btn> </span></span
                 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="marq"
-                  >Admissions open! Secure your place at Trinity for the upcoming academic year. Don't wait <span style="color: rgba(255, 182, 49, 1)"> apply now!</span></span
+                  >Admissions open! Secure your place at Trinity for the upcoming academic year. Don't wait <span style="color: rgba(255, 182, 49, 1)"> <v-btn @click="contactPage()" variant="text">apply now!</v-btn></span></span
                 >
               </Vue3Marquee>
             </v-col>
@@ -70,12 +70,12 @@
             <v-col cols="12">
               <v-col cols="12">
               <span>
-                <v-btn color="blue"
+                <v-btn color="blue" @click="coursePage()"
                   ><v-icon left>mdi-information-outline</v-icon>
                   Learn More
                 </v-btn>
               </span>
-            </v-col>
+            </v-col> 
             </v-col>
           </v-row>
         </v-img>
@@ -177,6 +177,14 @@ export default {
         ],
       ],
     };
+  },
+  methods:{
+    contactPage(){
+      this.$router.push({path:"/contactus"})
+    },
+    coursePage(){
+      this.$router.push({path:"/ourcourses"})
+    }
   },
 };
 </script>

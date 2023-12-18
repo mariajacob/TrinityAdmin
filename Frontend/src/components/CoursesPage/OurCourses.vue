@@ -550,48 +550,6 @@ export default {
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
-        {
-          id: 4,
-          image: require("@/assets/images/card3.png"),
-          title: "CIFA Pro",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 5,
-          image: require("@/assets/images/card3.png"),
-          title: "CIFA Pro",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 6,
-          image: require("@/assets/images/card3.png"),
-          title: "CIFA Pro",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 7,
-          image: require("@/assets/images/card3.png"),
-          title: "CIFA Pro",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 8,
-          image: require("@/assets/images/card3.png"),
-          title: "CIFA Pro",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 9,
-          image: require("@/assets/images/card3.png"),
-          title: "CIFA Pro",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
       ],
       langCards: [
         {

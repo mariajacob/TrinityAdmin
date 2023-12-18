@@ -9,9 +9,9 @@
       </v-col>
       <v-col cols="12" lg="6" md="6" sm="6" class="text-center sub">
         <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore sed do eiusmod tempor incididunt
-          ut labore
+          Explore our comprehensive catalog showcasing diverse courses offered by 
+our institution, tailored to ignite learning passions and drive academic
+ success.
         </span>
       </v-col>
     </v-row>

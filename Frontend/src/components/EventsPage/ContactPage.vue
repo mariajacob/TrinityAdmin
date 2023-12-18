@@ -290,11 +290,10 @@
                     </v-col>
                     <v-col cols="12">
                       <div class="field-label">Intrested Course</div>
-                      <v-select
-                        label="Select"
-                        :items="courses"
-                        variant="outlined"
-                      ></v-select>
+                      <v-select label="Select Your Course" :items="courses" v-model="selectedCourse"></v-select>
+
+              <!-- Update the template to use the new computed property name -->
+<v-select v-if="selectedCourse" label="Select Sub-Course" :items="filteredSubCourses"></v-select>
                     </v-col>
                     <v-col cols="12">
                       <div class="field-label">Institute</div>
@@ -363,7 +362,9 @@
 export default {
   data: () => ({
     qualifications: ["BTECH", "CA", "BA", "BCOM", "BBA", "MBA"],
-    courses: ["CIFA", "CGA", "ERP", "TALLY"],
+    courses: ["CIFA", "CGA","SAP HANA","ADVANCE EXCEL","GST COURSE","TALLY","CMA","CA","AI","LanguageCourses","ComputerCourses"],
+    subCourses: [],
+    selectedCourse: null,
     institutes: ["KOTTAYAM", "CHANGANACHERRY"],
     Qualification: null,
     Course: null,
@@ -371,6 +372,28 @@ export default {
     errorMessages: "",
     formHasErrors: false,
   }),
+  computed: {
+    // Rename one of the computed properties
+    filteredSubCourses() {
+      // Define the sub-courses for each main course
+      const subCoursesMap = {
+        CIFA: ["CIFA Basic", "CIFA Basic Plus","CIFA Pro"],
+        CGA: ["CGA Basic", "CGA Basic Plus","CGA Pro","CGA Basic Plus"],
+        SAPHANA: ["FICO", "SD","MM","PP"],
+        ADVANCEEXCEL: ["ADVANCED Basic", "ADVANCED Basic Plus","ADVANCED Pro","ADVANCED Basic"],
+        GSTCOURSE: ["GST Basic", "GST Basic Plus","GST Pro"],
+        TALLY: ["TALLY Basic", "TALLY Basic Plus","TALLY Pro","TALLY Basic Plus"],
+        CMA: ["CMA-USA"],
+        CA: ["CA-FOUNDATION COACHING", "CGA Sub2"],
+        AI: ["ROBOTICS", "MACHINE LEARNING","CODING"],
+        LanguageCourses: ["IELTS", "OET","SPOKEN ENGLISH","GERMAN","FRENCH"],
+        ComputerCourses: ["MSOFFICE Suite", "PYTHON","Django using Python","HTML","CSS","C++","JAVA","PHOTOSHOP","Diploma in Computer Application (DCA)","Diploma in Office Automation Course (DOA)","Digital Marketing"],
+      };
+
+      // Return sub-courses for the selected main course
+      return this.selectedCourse ? subCoursesMap[this.selectedCourse] || [] : [];
+    },
+  },
 };
 </script>
 <style>
