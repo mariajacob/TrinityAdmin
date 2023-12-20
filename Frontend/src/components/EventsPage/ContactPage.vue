@@ -290,10 +290,10 @@
                     </v-col>
                     <v-col cols="12">
                       <div class="field-label">Intrested Course</div>
-                      <v-select label="Select Your Course" :items="courses" v-model="selectedCourse"></v-select>
+                      <v-select label="Select Your Course" :items="courses" v-model="selectedCourse" variant="outlined"></v-select>
 
               <!-- Update the template to use the new computed property name -->
-<v-select v-if="selectedCourse" label="Select Sub-Course" :items="filteredSubCourses"></v-select>
+<v-select v-if="selectedCourse" label="Select Sub-Course" :items="filteredSubCourses" variant="outlined"></v-select>
                     </v-col>
                     <v-col cols="12">
                       <div class="field-label">Institute</div>

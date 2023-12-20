@@ -30,10 +30,9 @@
                 :rules="emailRules"
               ></v-text-field>
 
-              <v-select label="Select Your Course" :items="courses" v-model="selectedCourse" :rules="courseRules" required></v-select>
+              <v-select label="Select Your Course" :items="courses" v-model="selectedCourse" :rules="courseRules" variant="outlined" required></v-select>
 
-              <!-- Update the template to use the new computed property name -->
-<v-select v-if="selectedCourse" label="Select Sub-Course" :items="filteredSubCourses" :rules="courseRules" required></v-select>
+              <v-select v-if="selectedCourse" label="Select Sub-Course" :items="filteredSubCourses" :rules="courseRules" variant="outlined" required></v-select>
 
 
               <v-btn type="submit" color="blue">Submit</v-btn>&nbsp;&nbsp;&nbsp;
@@ -72,9 +71,7 @@ export default {
     };
   },
   computed: {
-    // Rename one of the computed properties
     filteredSubCourses() {
-      // Define the sub-courses for each main course
       const subCoursesMap = {
         CIFA: ["CIFA Basic", "CIFA Basic Plus","CIFA Pro"],
         CGA: ["CGA Basic", "CGA Basic Plus","CGA Pro","CGA Basic Plus"],
@@ -89,13 +86,13 @@ export default {
         ComputerCourses: ["MSOFFICE Suite", "PYTHON","Django using Python","HTML","CSS","C++","JAVA","PHOTOSHOP","Diploma in Computer Application (DCA)","Diploma in Office Automation Course (DOA)","Digital Marketing"],
       };
 
-      // Return sub-courses for the selected main course
+     
       return this.selectedCourse ? subCoursesMap[this.selectedCourse] || [] : [];
     },
   },
   methods: {
     submitForm() {
-      // Add form submission logic here
+    
     },
     clearForm() {
       this.name = "";
