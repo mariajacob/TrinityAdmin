@@ -84,17 +84,19 @@ router.post('/latestnews/edit', adminAuth, async(req, res)=>{
 
     try {
         var { id, news, link } = req.body
-        if (!news && !link)
+        if (!id)
         {
             res.status(200).json({
                 status: false,
-                msg : "invalid(Enter Data)"
+                msg : "invalid(Enter Id)"
             })
         }
         var updatenews =await latestnewsModel.findOne({_id:id})
         if(updatenews){
-            updatenews.news = news
-            updatenews.link = link
+            if(news)
+                updatenews.news = news
+            if(link)
+                updatenews.link = link
             await updatenews.save()
             res.status(200).json({
                 status: true,

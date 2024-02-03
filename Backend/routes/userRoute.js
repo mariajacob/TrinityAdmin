@@ -54,7 +54,7 @@ router.post('/admin/add',async(req,res)=>{
         if (emailVali){
             res.status(200).json({
                 status:false,
-                msg:'Phone already Exists'
+                msg:'Email already Exists'
             });
             return
         }

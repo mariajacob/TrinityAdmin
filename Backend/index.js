@@ -11,8 +11,11 @@ let app = express();
 var userRoute =require("./routes/userRoute")
 var contactusRoute =require("./routes/contactusRoute")
 var latestnewsRoute =require("./routes/latestnewsRoute")
-
-
+var reviewsRoute =require("./routes/reviewsRoute")
+var placementRoute =require("./routes/placementRoute");
+var discoverDetailsRoute =require("./routes/discoverDetailsRoute")
+var tailsectionRoute =require("./routes/tailsectionRoute")
+var aboutusRoute =require("./routes/aboutusRoute")
 
 
 
@@ -67,6 +70,14 @@ app.use((req, res, next) => {
 app.use(userRoute);
 app.use(contactusRoute);
 app.use(latestnewsRoute);
+app.use(reviewsRoute);
+app.use(placementRoute);
+app.use(discoverDetailsRoute);
+app.use(tailsectionRoute);
+app.use(aboutusRoute)
+
+
+
 
 //Route for checking the server health
 app.get('/health', async(req, res) => {
