@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: rgba(58, 129, 230, 1)" class="pb-10 pt-10 px-lg-12 px-md-10">
+  <div style="background-color: rgba(58, 129, 230, 1)" class="pb-10 pt-10 px-lg-12 px-md-8">
     <v-row justify="center">
       <v-col cols="12" class="text-center head px-lg-0 px-9 " style="text-align: justify;">
         <span>
@@ -7,7 +7,7 @@
           <span style="color: rgba(255, 182, 49, 1)"> Offer</span></span
         >
       </v-col>
-      <v-col cols="12" lg="6" md="12" sm="12" class="sub px-lg-0 px-8" style="text-align: justify;">
+      <v-col cols="12" lg="6" md="12" sm="12" class="sub px-lg-0 px-8 px-md-0" style="text-align: justify;">
         <span>
           Explore our comprehensive catalog showcasing diverse courses offered by 
 our institution, tailored to ignite learning passions and drive academic

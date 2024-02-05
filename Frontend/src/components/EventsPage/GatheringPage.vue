@@ -39,7 +39,7 @@
                     <v-col cols="12" sm="12" md="12" lg="12" class="pb-md-0 pb-0 pb-sm-1 pt-md-2 pt-lg-2 pt-md-2 pt-sm-3 pt-2">
                       {{ card.title }}
                     </v-col>
-                    <v-col cols="12" class="pt-md-2 pt-lg-3 pt-md-2 pt-sm-3 pt-1       pb-md-2 pb-lg-2 pb-md-2 pb-sm-3 pb -2">
+                    <v-col cols="12" class="pt-md-2 pt-lg-3 pt-md-2 pt-sm-3 pt-1 pb-md-2 pb-lg-2 pb-md-2 pb-sm-3 pb -2">
                       {{ card.subtitle }}
                     </v-col>
                   </v-row>

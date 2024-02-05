@@ -14,7 +14,7 @@
         >
       </v-col>
     </v-row>
-    <v-row justify="center" class="px-10">
+    <v-row justify="center" class="px-10 px-sm-8 px-md-10">
       <v-col cols="12" lg="11" sm="12" class="px-sm-0" v-for="(image, index) in items" :key="index">
         <v-card flat style="padding-top: 10px">
           <v-row justify="center" >
