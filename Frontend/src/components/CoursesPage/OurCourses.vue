@@ -1,7 +1,7 @@
 <template>
   <div class="pt-16">
     <v-row justify="center">
-      <v-col cols="12" class="text-center head">
+      <v-col cols="12" sm="12" md="12" lg="12" class="text-center head pt-md-8">
         <span>Our</span>
         <span style="color: rgba(255, 182, 49, 1)">&nbsp;Courses</span>
       </v-col>
@@ -48,11 +48,11 @@
           <!-- <v-row justify="center" class="pt-10">
             <v-col cols="12"> -->
               <v-row justify="center" class="pt-10">
-                <v-col cols="12" lg="5" sm="8" class="text-center" align-self="center">
+                <v-col cols="12" lg="6" sm="8" class="text-center px-8 px-lg-3" align-self="center">
                   <v-chip-group multiple v-model="selectedChips" class="text-center">
                     <template v-for="chip in chips" :key="chip.value">
                       <v-chip
-                        class="ma-1 text-center"
+                       px-lg-3 class="ma-1 text-center"
                         label
                         @click="selectTab(chip.value)"
                         :class="{
@@ -70,7 +70,7 @@
           
         </v-col>
         <v-col cols="12" lg="12">
-          <v-row class="px-16 py-16">
+          <v-row class="px-lg-16 py-lg-10 pb-lg-16 px-6 py-6 px-sm-8 py-sm-8 px-md-16 py-md-10 pb-md-16">
             <v-col v-if="selectedTab === 'CIFA'" cols="12">
               <v-row class="horizontal">
                 <v-col
@@ -81,6 +81,7 @@
                   v-for="card in cifaCards"
                   :key="card.id"
                   align-self="center"
+
                 >
                   <v-card elevation="10" style="border-radius: 20px">
                     <div class="image">
@@ -109,7 +110,7 @@
             <v-col v-if="selectedTab === 'CGA'" cols="12">
               <v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -144,7 +145,7 @@
             <v-col v-if="selectedTab === 'SAP'" cols="12">
               <v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -179,7 +180,7 @@
             <v-col v-if="selectedTab === 'Advanced Excel'" cols="12">
               <v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -214,7 +215,7 @@
             <v-col v-if="selectedTab === 'GST Course'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -249,7 +250,7 @@
             <v-col v-if="selectedTab === 'Tally'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -284,7 +285,7 @@
             <v-col v-if="selectedTab === 'CMA'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -319,7 +320,7 @@
             <v-col v-if="selectedTab === 'CA'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -354,7 +355,7 @@
             <v-col v-if="selectedTab === 'Computer Courses'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -389,7 +390,7 @@
             <v-col v-if="selectedTab === 'AI'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -424,7 +425,7 @@
             <v-col v-if="selectedTab === 'Language Courses'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"

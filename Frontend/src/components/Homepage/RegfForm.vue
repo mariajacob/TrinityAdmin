@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-row justify="center">
-      <v-col cols="12" lg="12" class="text-center">
-        <v-card>
+      <v-col cols="12" sm="10" md="10" lg="11" class="text-center">
+        <v-card rounded="10" class="custom-card pa-0 pa-sm-3 pa-md-3 pa-lg-3">
           <v-card-title class="reg">Registration <span style="color: rgba(248, 141, 47, 1) ;">Form</span></v-card-title>
           <v-card-text>
             <form @submit="submitForm">
@@ -113,4 +113,8 @@ export default {
 .button {
   font-family: archireg;
 }
+.custom-card {
+  border-radius: 20px; /* Adjust the value for desired curvature */
+}
+
 </style>

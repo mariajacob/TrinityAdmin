@@ -1,13 +1,13 @@
 <template>
   <div class="pt-16">
     <v-row justify="center">
-      <v-col cols="12" class="text-center head">
+      <v-col cols="12" sm="12" md="12" lg="12" class="text-center head pt-md-8">
         <span style="color: rgb(0, 0, 0)"
           >Events and
           <span style="color: rgba(255, 182, 49, 1)">Gathering</span></span
         >
       </v-col>
-      <v-col cols="6" class="text-center sub1">
+      <v-col cols="12" sm="12" lg="6" class=" sub1 px-8" style="text-align: justify;">
         <span
           >In the tapestry of our institution's history, events and achievements
           are the vibrant threads that weave together a story of growth,
