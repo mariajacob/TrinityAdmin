@@ -7,7 +7,7 @@
           <span style="color: rgba(255, 182, 49, 1)">Gathering</span></span
         >
       </v-col>
-      <v-col cols="12" sm="12" lg="6" class=" sub1 px-8" style="text-align: justify;">
+      <v-col cols="12" sm="12" lg="10" class=" sub1 px-8 px-sm-10 px-md-16" style="text-align: justify;">
         <span
           >In the tapestry of our institution's history, events and achievements
           are the vibrant threads that weave together a story of growth,
@@ -17,12 +17,12 @@
       </v-col>
     </v-row>
     <v-row justify="center" class="py-16 px-lg-16">
-      <v-col cols="12" align-self="center" class="pa-0">
+      <v-col cols="12" lg="12" align-self="center" class="pa-0 px-8 px-lg-16 px-md-16 px-sm-10">
         <v-row justify="center" class="pa-0">
           <v-col
             cols="12"
             lg="4"
-            sm="4"
+            sm="12"
             md="4"
             v-for="card in images"
             :key="card.id"
@@ -36,10 +36,10 @@
                   cols="12"
                 >
                   <v-row style="color: white">
-                    <v-col cols="12" class="">
+                    <v-col cols="12" sm="12" md="12" lg="12" class="pb-md-0 pb-0 pb-sm-1 pt-md-2 pt-lg-2 pt-md-2 pt-sm-3 pt-2">
                       {{ card.title }}
                     </v-col>
-                    <v-col cols="12">
+                    <v-col cols="12" class="pt-md-2 pt-lg-3 pt-md-2 pt-sm-3 pt-1       pb-md-2 pb-lg-2 pb-md-2 pb-sm-3 pb -2">
                       {{ card.subtitle }}
                     </v-col>
                   </v-row>
@@ -51,11 +51,11 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col cols="12" class="text-center head">
+      <v-col cols="12" class="text-center head px-8 px-lg-3">
         <span style="color: rgba(64, 60, 60, 1)">Our</span>
         <span style="color: rgba(248, 141, 47, 1)"> Placements</span>
       </v-col>
-      <v-col cols="12" lg="6" class="text-center sub1">
+      <v-col cols="12" sm="12" lg="7" class=" sub1 px-lg-3 px-md-16 px-sm-10 px-8" style="text-align: justify;">
         Congrats to our talented graduates who have embarked on a new journey as
         they step into the corporate world. Your success is our pride.
       </v-col>
