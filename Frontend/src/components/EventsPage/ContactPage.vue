@@ -365,8 +365,8 @@
     </v-row>
   </div>
   <div>
-    <v-row justify="center">
-      <v-col cols="12">
+    <v-row justify="center" class="pb-lg-5">
+      <v-col cols="12" class="pb-lg-16">
         <v-row justify="center">
           <v-col cols="12" sm="6" md="5" lg="4" class="px-lg-0 px-md-5 px-sm-7">
             <v-img src="../../assets/images/map1.png"></v-img>
