@@ -128,6 +128,20 @@ const routes = [
     component: () => import('../components/CoursesPage/ComputerDetails')
   },
   {
+    path: '/VisualizationDetails',
+    name: 'VisualizationDetails',
+    component: () => import('../components/CoursesPage/VisualizationDetails')
+  },
+  {
+    path: '/OtherAccountingDetails',
+    name: 'OtherAccountingDetails',
+    component: () => import('../components/CoursesPage/OtherAccountingDetails')
+  },{
+    path: '/OtherCoursesDetails',
+    name: 'OtherCoursesDetails',
+    component: () => import('../components/CoursesPage/OtherCoursesDetails')
+  },
+  {
     path: '/AIDetails',
     name: 'AIDetails',
     component: () => import('../components/CoursesPage/AIDetails')

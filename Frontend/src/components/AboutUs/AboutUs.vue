@@ -64,43 +64,106 @@ In the next few years, we want to make a difference in the “add on” Educatio
 Students, be they ordinary graduates or ones with professional degrees like BTech or MBA
 </span>
       </v-col>
-       </v-row
-    >
-    <v-row>
-      <v-col cols="12" sm="12" md="12" lg="12">
+       </v-row>
+
+
+       <v-row>
+  <!-- Vision Section -->
+  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16" style="background-color: rgba(58, 129, 230, 1)">
+    <span style="color: white;">Our</span> <span style="color: rgba(255, 182, 49, 1);">Vision</span>
     <v-row justify="center">
-      <v-col cols="12" sm="12" md="12" lg="12">
-        <v-row>
-            <v-col cols="12" sm="12" md="6" class="text-center vis pt-16 pb-16" lg="6" style="background-color: rgba(58, 129, 230, 1)">
-        <span style="color: white;">Our</span> <span style="color: rgba(255, 182, 49, 1);">Vision</span>
-        <v-row justify="center">
-          <v-col cols="10" sm="12" md="12" lg="10" style="text-align: center;" class="px-8">
-            <span  class="text-center visub ">Enhance Competancy !! Enhance Employability!!!</span>
-          </v-col>
-        </v-row>
-
-      </v-col>
-        </v-row>
+      <v-col cols="12" lg="10" style="text-align: center;" class="px-4">
+        <span class="text-center visub">Enhance Competency !! Enhance Employability!!!</span>
       </v-col>
     </v-row>
-    <v-row justify="end">
-      <v-col cols="12" sm="12" md="6" lg="6" class="pb-8 pb-lg-14 pb-md-12 pt-lg-3 pt-md-3 pt-11">
-        <v-row justify="center">
-            <v-col cols="12" sm="12" md="12" class="text-center vis pt-16 pb-16" lg="12" style="background-color: rgba(58, 129, 230, 1)">
-        <span style="color: white;">Our</span> <span style="color: rgba(255, 182, 49, 1);">Mission</span>
-        <v-row justify="center">
-          <v-col cols="12" sm="12" md="12" lg="10" style="text-align: justify;" class="px-8 px-sm-8">
-            <span  class="text-center visub ">Empower the youth to face the challenges of the Global digital platform through skill upgrades.</span>
-          </v-col>
-        </v-row>
-        
-
-      </v-col>
-        </v-row>
-      </v-col>
-    </v-row>\      
   </v-col>
+
+  <!-- Mission Section -->
+  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16" style="background-color: rgba(58, 129, 230, 1)">
+    <span style="color: white;">Our</span> <span style="color: rgba(255, 182, 49, 1);">Mission</span>
+    <v-row justify="center">
+      <v-col cols="12" lg="10" style="text-align: justify;" class="px-4">
+        <span class="text-center visub">Empower the youth to face the challenges of the Global digital platform through skill upgrades.</span>
+      </v-col>
     </v-row>
+  </v-col>
+
+  <!-- Skills Section -->
+  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16" style="background-color: rgba(58, 129, 230, 1)">
+    <span style="color: white;">Our</span> <span style="color: rgba(255, 182, 49, 1);">Skills</span>
+    <v-row justify="center">
+      <v-col cols="12" lg="10" style="text-align: justify;" class="px-4">
+
+      <ul style="padding-left: 20px; padding-left: 0;">
+    <li style="color:white">
+        <span class="visub" style="color: white;" text-align="left">  
+            Our courses and certifications are curated by creators of the product and industry experts.
+        </span>
+    </li>
+    <li style="color:white">
+        <span class="text-center visub" style="color: white;">  
+          We have a team of professionals to provide you better assistance
+        </span>
+    </li>
+    <li style="color:white">
+        <span class="text-center visub" style="color: white;">  
+        Systematically we designed the course modules to provide an orderly our learning experience
+        </span>
+    </li>
+      </ul>
+      </v-col>
+    </v-row>
+  </v-col>
+
+  <!-- Benefits Section -->
+  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16" style="background-color: rgba(58, 129, 230, 1)">
+    <span style="color: white;">Our</span> <span style="color: rgba(255, 182, 49, 1);">Benefits</span>
+    <v-row justify="center">
+      <v-col cols="12" lg="10" style="text-align: justify;" class="px-4">
+        <ul style="padding-left: 20px; padding-left: 0;">
+    <li style="color:white">
+        <span class="visub" style="color: white;" text-align="left">  
+          Ensure career progression and management across multiple industries
+        </span>
+    </li>
+    <li style="color:white">
+        <span class="text-center visub" style="color: white;">  
+          Our Courses and Certifications are industry-recognized
+        </span>
+    </li>
+    <li style="color:white">
+        <span class="text-center visub" style="color: white;">  
+          Online assessment availability with our courses
+        </span>
+    </li>
+    <li style="color:white">
+        <span class="text-center visub" style="color: white;">  
+          The courses can be accessed through the Education Content App
+        </span>
+    </li>
+    <li style="color:white">
+        <span class="text-center visub" style="color: white;">  
+          Online courses can be accessed and learned from anywhere and anytime
+        </span>
+    </li>
+    <li style="color:white">
+        <span class="text-center visub" style="color: white;">  
+          Guided and thoughtfully created sessions for mastering the art of job interviews
+        </span>
+    </li>
+    <li style="color:white">
+        <span class="text-center visub" style="color: white;">  
+          Assistance in securing a job you deserve
+        </span>
+    </li>
+      </ul>
+      </v-col>
+    </v-row>
+  </v-col>
+</v-row>
+
+
+
   </div>
 </template>
 <style>
@@ -146,4 +209,11 @@ Students, be they ordinary graduates or ones with professional degrees like BTec
   font-weight: 400;
   color: white;
 }
+/* ul li::before {
+        content: "•"; 
+        font-size: 0.8em;
+        margin-right: 5px;
+        color: white;
+    } */
+
 </style>

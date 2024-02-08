@@ -516,7 +516,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="LanguageDetails(card.id)">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="VisualizationDetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -528,7 +528,42 @@
                 </v-col>
               </v-row>
             </v-col>
-            <v-col v-if="selectedTab === 'Life Skill Traning'" cols="12"
+            <v-col v-if="selectedTab === 'Other Accounting Courses'" cols="12"
+              ><v-row class="horizontal">
+                <v-col
+                  cols="12"
+                  lg="4"
+                  md="5"
+                  sm="6"
+                  v-for="card in otheraccountingCards"
+                  :key="card.id"
+                  align-self="center"
+                >
+                  <v-card elevation="10" style="border-radius: 20px">
+                    <div class="image">
+                      <v-img :src="card.image" height="auto" cover></v-img>
+                    </div>
+                    <v-col cols="12">
+                      <v-col cols="12" class="title">
+                        {{ card.title }}
+                      </v-col>
+                      <v-col cols="12" class="subtitle">
+                        {{ card.subtitle }}
+                      </v-col>
+                      <v-col cols="12">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="OtherAccountingDetails(card.id)">
+                          Learn More
+                          <v-icon right style="color: black"
+                            >mdi-arrow-right</v-icon
+                          >
+                        </v-btn>
+                      </v-col>
+                    </v-col>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col v-if="selectedTab === 'Other Courses'" cols="12"
               ><v-row class="horizontal">
                 <v-col
                   cols="12"
@@ -551,7 +586,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="LanguageDetails(card.id)">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="OtherCoursesDetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -627,8 +662,9 @@ export default {
         { label: "Computer Courses", value: "Computer Courses" },
         { label: "AI", value: "AI" },
         { label: "Language Courses", value: "Language Courses" },
-        { label: "Life Skill Traning", value: "Other Courses" },
         { label: "Visualization software", value: "Visualization software" },
+        { label: "Other Accounting Courses", value: "Other Accounting Courses" },
+        { label: "Other Courses", value: "Other Courses" },
         // { label: "Tally", value: "Tally" },
         // { label: "CIFA", value: "CIFA" },
         // { label: "CGA", value: "CGA" },
@@ -716,20 +752,6 @@ export default {
           id: 3,
           image: require("@/assets/images/card2.png"),
           title: "SPOKEN ENGLISH",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 4,
-          image: require("@/assets/images/card2.png"),
-          title: "GERMAN",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 5,
-          image: require("@/assets/images/card2.png"),
-          title: "FRENCH",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
@@ -975,7 +997,7 @@ export default {
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
-          id: 1,
+          id: 2,
           image: require("@/assets/images/card2.png"),
           title: "TABLEAU",
           subtitle:
@@ -986,7 +1008,30 @@ export default {
         {
           id: 1,
           image: require("@/assets/images/card2.png"),
-          title: "CA-FOUNDATION COACHING",
+          title: "Life skill Training",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+        {
+          id: 2,
+          image: require("@/assets/images/card2.png"),
+          title: "Summer Coaching Classes",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+      ],
+      otheraccountingCards: [
+        {
+          id: 1,
+          image: require("@/assets/images/card2.png"),
+          title: "Peach Tree/SAGE 50",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+        {
+          id: 2,
+          image: require("@/assets/images/card2.png"),
+          title: "QUICKBOOKS",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
@@ -1045,15 +1090,15 @@ export default {
         behavior: 'smooth',
       });
     },
-    GSTDetails(){
-      this.$router.push("/GSTDetails");
+    GSTDetails(cardId){
+      this.$router.push({ name: 'GSTDetails', query: { cardId } });
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
       });
     },
-    TallyDetails(){
-      this.$router.push("/TallyDetails");
+    TallyDetails(cardId){
+      this.$router.push({ name: 'TallyDetails', query: { cardId } });
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
@@ -1066,8 +1111,8 @@ export default {
         behavior: 'smooth',
       });
     },
-    ComputerDetails(){
-      this.$router.push("/ComputerDetails");
+    ComputerDetails(cardId){
+      this.$router.push({ name: 'ComputerDetails', query: { cardId } });
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
@@ -1080,8 +1125,29 @@ export default {
         behavior: 'smooth',
       });
     },
-    LanguageDetails(){
-      this.$router.push("/SAPDetails");
+    LanguageDetails(cardId){
+      this.$router.push({ name: 'LanguageDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    OtherCoursesDetails(cardId){
+      this.$router.push({ name: 'OtherCoursesDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    VisualizationDetails(cardId){
+      this.$router.push({ name: 'VisualizationDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    OtherAccountingDetails(cardId){
+      this.$router.push({ name: 'OtherAccountingDetails', query: { cardId } });
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
