@@ -48,7 +48,7 @@
           <!-- <v-row justify="center" class="pt-10">
             <v-col cols="12"> -->
               <v-row justify="center" class="pt-10">
-                <v-col cols="12" lg="10" sm="8" class="text-center px-8 px-lg-3" align-self="center"  >
+                <v-col cols="12" md="10" lg="10" sm="12" class="text-center px-8 px-lg-3" align-self="center"  >
                   <v-chip-group style="border-radius: 60px;" multiple v-model="selectedChips" class="text-center ">
                     <template v-for="chip in chips" :key="chip.value">
                     
@@ -907,6 +907,13 @@ export default {
           id: 4,
           image: require("@/assets/images/card3.png"),
           title: "TALLY Essential Comprehensive",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+        {
+          id: 5,
+          image: require("@/assets/images/card3.png"),
+          title: "TALLY Professional Course Practical Training",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },

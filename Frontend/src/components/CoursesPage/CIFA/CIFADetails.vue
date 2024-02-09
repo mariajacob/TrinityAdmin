@@ -345,7 +345,7 @@ skills.
       <v-row justify="center" class="px-lg-16 px-md-10">
         <v-col cols="12" sm="8" md="12" lg="8" class="px-8 sub"
           ><span style="color: rgb(0, 0, 0)"
-            >Certified Indian and Foreign Accountant – CIFA Basic (Normal Track)</span
+            >Certified Indian and Foreign Accountant - CIFA Basic (Normal Track)</span
           ></v-col
         >
         <v-col cols="12" sm="12" md="12" lg="4" class="text-right px-8 px-lg-8" align-self="center"

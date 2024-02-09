@@ -7,7 +7,7 @@
         <v-row justify="center">
       <v-col cols="12" sm="12" md="12" lg="12" class="text-center head pt-md-8">
         <span style="color: rgb(0, 0, 0)"
-          >Course <span style="color: rgba(246, 162, 9, 1)">Details CGA</span></span
+          >Course <span style="color: rgba(246, 162, 9, 1)">Details</span></span
         >
       </v-col>
     </v-row>
@@ -174,7 +174,7 @@ skills.
         <v-row justify="center">
       <v-col cols="12" sm="12" md="12" lg="12" class="text-center head pt-md-8">
         <span style="color: rgb(0, 0, 0)"
-          >Course <span style="color: rgba(246, 162, 9, 1)">Details CGA</span></span
+          >Course <span style="color: rgba(246, 162, 9, 1)">Details</span></span
         >
       </v-col>
     </v-row>
@@ -341,7 +341,7 @@ skills.
         <v-row justify="center">
       <v-col cols="12" sm="12" md="12" lg="12" class="text-center head pt-md-8">
         <span style="color: rgb(0, 0, 0)"
-          >Course <span style="color: rgba(246, 162, 9, 1)">Details CGA</span></span
+          >Course <span style="color: rgba(246, 162, 9, 1)">Details</span></span
         >
       </v-col>
     </v-row>
@@ -508,7 +508,7 @@ skills.
         <v-row justify="center">
       <v-col cols="12" sm="12" md="12" lg="12" class="text-center head pt-md-8">
         <span style="color: rgb(0, 0, 0)"
-          >Course <span style="color: rgba(246, 162, 9, 1)">Details CGA</span></span
+          >Course <span style="color: rgba(246, 162, 9, 1)">Details</span></span
         >
       </v-col>
     </v-row>
