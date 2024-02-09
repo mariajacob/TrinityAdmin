@@ -5,26 +5,26 @@
         <v-row>
           <v-col cols="12" lg="4" sm="4" md="4">
             <v-row class="add">
-              <v-col cols="12" class="px-0 py-0"
-                ><v-img src="../../assets/images/logo2.png"></v-img
+              <v-col cols="12" class="px-0 py-0 pb-lg-5">
+                <v-img src="../../assets/images/logo2.png"></v-img
               ></v-col>
-              <v-row class="py-lg-5">
+              <v-row class="py-lg-5 pt-lg-0 pt-8">
               <v-col cols="1" md="1" sm="1"  lg="1" class="px-0 py-0"><v-icon>mdi-map-marker</v-icon></v-col>
-              <v-col cols="11" md="11" sm="11" lg="11"  class="px-0 py-0"
+              <v-col cols="11" md="11" sm="11" lg="11"  class="px-0 py-0 pl-sm-3 pl-md-2 pl-2 pl-lg-0"
                 ><span>
                   First Floor ,Lilly Book House, Opp. Assumption College,<br>SB
                   College P.O, Changanacherry-686101
                 </span></v-col
               >
               <v-col cols="1" md="1" sm="1"  lg="1" class="px-0 py-0"><v-icon>mdi-map-marker</v-icon></v-col>
-              <v-col cols="11" md="11" sm="11" lg="11"  class="px-0 py-0"><span>
+              <v-col cols="11" md="11" sm="11" lg="11"  class="px-0 py-0 pl-sm-3 pl-md-2 pl-2 pl-lg-0"><span>
                           6,Vellapally Builings,Vellapally Lane,
                           Opp.BCM College,KK Road, Kottayam-686101</span></v-col>
                 </v-row>
             </v-row>  
           </v-col>
-          <v-col cols="12" lg="4" sm="4" md="4">
-            <v-row justify="center">
+          <v-col cols="12" lg="4" sm="4" md="4" class="pt-0">
+            <v-row justify="center" >
               <v-col cols="12" lg="6" md="12" sm="12" class="text-left">
                 <v-col class="subbbbb"
                   ><v-btn variant="text">Navigation</v-btn></v-col
@@ -47,7 +47,7 @@
           </v-col>
           <v-col cols="12" lg="4" sm="4" md="4">
             <v-row justify="center">
-              <v-col cols="12" lg="7" md="12" sm="12" class="text-left">
+              <v-col cols="12" lg="7" md="12" sm="12" class="text-left pt-0">
                 <v-col class="subbbbb"
                   ><v-btn variant="text" @click="about()">About</v-btn></v-col
                 >

@@ -1,13 +1,13 @@
 <template>
-  <div style="background-color: rgba(58, 129, 230, 1)" class="pb-10 pt-10">
+  <div style="background-color: rgba(58, 129, 230, 1)" class="pb-10 pt-10 px-lg-12 px-md-8">
     <v-row justify="center">
-      <v-col cols="12" class="text-center head">
+      <v-col cols="12" class="text-center head px-lg-0 px-9 " style="text-align: justify;">
         <span>
           Courses we
           <span style="color: rgba(255, 182, 49, 1)"> Offer</span></span
         >
       </v-col>
-      <v-col cols="12" lg="6" md="6" sm="6" class="text-center sub">
+      <v-col cols="12" lg="6" md="12" sm="12" class="sub px-lg-0 px-8 px-md-0" style="text-align: justify;">
         <span>
           Explore our comprehensive catalog showcasing diverse courses offered by 
 our institution, tailored to ignite learning passions and drive academic
@@ -16,46 +16,46 @@ our institution, tailored to ignite learning passions and drive academic
       </v-col>
     </v-row>
     <v-row justify="start">
-      <v-col cols="12" lg="3" md="3" sm="3" class="px-0 py-0">
+      <v-col cols="12" lg="2" md="3" sm="6" class="px-0 py-0 px-sm-8">
         <v-row justify="center" class="pt-10">
-          <v-col cols="12" sm="12" lg="12" md="12">
+          <v-col cols="12" sm="12" lg="12" md="12" >
             <v-row justify="center" class="equal-size-buttons">
-              <v-col cols="7" sm="11" lg="7" md="8">
+              <v-col cols="7" sm="11" lg="12" md="12" class="pr-lg-0">
                 <v-btn
                   @click="selectedTab = 'CIFA'"
                   :class="{ active: selectedTab === 'CIFA' }"
                   >CIFA</v-btn
                 >
               </v-col>
-              <v-col cols="7" sm="11" lg="7" md="8">
+              <v-col cols="7" sm="11" lg="12" md="12" class="pr-lg-0">
                 <v-btn
                   @click="selectedTab = 'CGA'"
                   :class="{ active: selectedTab === 'CGA' }"
                   >CGA</v-btn
                 >
               </v-col>
-              <v-col cols="7" sm="11" lg="7" md="8">
+              <v-col cols="7" sm="11" lg="12" md="12" class="pr-lg-0">
                 <v-btn
                   @click="selectedTab = 'SAP'"
                   :class="{ active: selectedTab === 'SAP' }"
                   >SAP HANA</v-btn
                 >
               </v-col>
-              <v-col cols="7" sm="11" lg="7" md="8">
+              <v-col cols="7" sm="11" lg="12" md="12" class="pr-lg-0">
                 <v-btn
                   @click="selectedTab = 'Advanced Excel'"
                   :class="{ active: selectedTab === 'Advanced Excel' }"
                   >Advanced Excel</v-btn
                 >
               </v-col>
-              <v-col cols="7" sm="11" lg="7" md="8">
+              <v-col cols="7" sm="11" lg="12" md="12" class="pr-lg-0">
                 <v-btn
                   @click="selectedTab = 'GST Course'"
                   :class="{ active: selectedTab === 'GST Course' }"
                   >GST Course</v-btn
                 >
               </v-col>
-              <v-col cols="7" sm="11" lg="7" md="8">
+              <v-col cols="7" sm="11" lg="12" md="12" class="pr-lg-0">
                 <v-btn
                   @click="selectedTab = 'Tally'"
                   :class="{ active: selectedTab === 'Tally' }"
@@ -66,39 +66,39 @@ our institution, tailored to ignite learning passions and drive academic
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="12" lg="3" md="3" sm="3" class="px-0 py-0">
+      <v-col cols="12" lg="2" md="3" sm="6" class="px-0 py-0 pl-md-0  px-sm-8">
         <v-row justify="center" class="pt-10">
           <v-col cols="12" sm="12" lg="12" md="12">
             <v-row justify="center" class="equal-size-buttons">
-              <v-col cols="7" sm="11" lg="7" md="8">
+              <v-col cols="7" sm="11" lg="12" md="11" class="pl-lg-8 pr-lg-0">
                 <v-btn
                   @click="selectedTab = 'CMA'"
                   :class="{ active: selectedTab === 'CMA' }"
                   >CMA</v-btn
                 >
               </v-col>
-              <v-col cols="7" sm="11" lg="7" md="8">
+              <v-col cols="7" sm="11" lg="12" md="11" class="pl-lg-8 pr-lg-0">
                 <v-btn
                   @click="selectedTab = 'CA'"
                   :class="{ active: selectedTab === 'CA' }"
                   >CA</v-btn
                 >
               </v-col>
-              <v-col cols="7" sm="11" lg="7" md="8">
+              <v-col cols="7" sm="11" lg="12" md="11" class="pl-lg-8 pr-lg-0">
                 <v-btn
                   @click="selectedTab = 'AI'"
                   :class="{ active: selectedTab === 'AI' }"
                   >AI</v-btn
                 >
               </v-col>
-              <v-col cols="7" sm="11" lg="7" md="8">
+              <v-col cols="7" sm="11" lg="12" md="11" class="pl-lg-8 pr-lg-0">
                 <v-btn
                   @click="selectedTab = 'Language Courses'"
                   :class="{ active: selectedTab === 'Language Courses' }"
                   >Language Courses</v-btn
                 >
               </v-col>
-              <v-col cols="7" sm="11" lg="7" md="8">
+              <v-col cols="7" sm="11" lg="12" md="11" class="pl-lg-8 pr-lg-0">
                 <v-btn
                   @click="selectedTab = 'Computer Courses'"
                   :class="{ active: selectedTab === 'Computer Courses' }"
@@ -137,7 +137,7 @@ our institution, tailored to ignite learning passions and drive academic
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="12" lg="6" md="6" sm="6">
+      <v-col cols="10" lg="6" md="6" sm="12" class="pl-lg-16 pl-md-0 pl-16 pr-lg-0 pr-0 pt-lg-0 pt-7">
         <v-row>
           <v-col v-if="selectedTab === 'CIFA'" cols="12">
             <v-row class="horizontall">
@@ -149,6 +149,7 @@ our institution, tailored to ignite learning passions and drive academic
                 v-for="card in cifaCards"
                 :key="card.id"
                 align-self="center"
+                class="pl-0"
               >
                 <v-card elevation="0" style="border-radius: 20px">
                   <div class="image">
@@ -174,7 +175,7 @@ our institution, tailored to ignite learning passions and drive academic
               </v-col>
             </v-row>
           </v-col>
-          <v-col v-if="selectedTab === 'CGA'" cols="12">
+          <v-col v-if="selectedTab === 'CGA'" lg="12" cols="12">
             <v-row class="horizontall">
               <v-col
               cols="12"
@@ -184,6 +185,7 @@ our institution, tailored to ignite learning passions and drive academic
                 v-for="card in cgaCards"
                 :key="card.id"
                 align-self="center"
+                
               >
                 <v-card elevation="0" style="border-radius: 20px">
                   <div class="image">
@@ -935,6 +937,7 @@ export default {
   flex-wrap: nowrap;
   gap: 10px;
   overflow-x: auto;
+  
 }
 .horizontall::-webkit-scrollbar {
   height: 5px;

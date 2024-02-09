@@ -16,34 +16,34 @@
         <v-col><v-img src="./assets/images/stk5.png"></v-img></v-col>
       </v-col>
     </v-row> -->
-    <v-row justify="end" v-if="$route.name == 'homepage'">
-    <v-col cols="3" lg="1" md="1" sm="1" class="stick">
-      <v-col>
+    <v-row justify="end" v-if="$route.name == 'homepage'" >
+    <v-col cols="3" lg="1" md="1" sm="2" class="stick pt-lg-0 pt-sm-0 pt-md-5 pr-lg-5 pr-md-4 pt-lg-16">
+      <v-col class="pa-sm-6 py-sm-2 py-md-2 pa-md-1 pa-lg-5">
         <router-link to="/blogpage">
           <v-img src="./assets/images/stk1.png" class="hoverable-img"></v-img>
         </router-link>
       </v-col>
-      <v-col>
+      <v-col class="pa-sm-6 py-sm-2 py-md-2 pa-md-1 pa-lg-5 pt-lg-0">
         <a href="https://mail.google.com" target="_blank">
           <v-img src="./assets/images/stk2.png" class="hoverable-img"></v-img>
         </a>
       </v-col>
-      <v-col>
+      <v-col class="pa-sm-6 py-sm-2 py-md-2 pa-md-1 pa-lg-5 pt-lg-0">
         <a href="https://wa.me/7025106727" target="_blank">
           <v-img src="./assets/images/stk3.png" class="hoverable-img"></v-img>
         </a>
       </v-col>
-      <v-col>
+      <v-col class="pa-sm-6 py-sm-2 py-md-2 pa-md-1 pa-lg-5 pt-lg-0">
         <a href="https://instagram.com/trinityprofessionalacademy?igshid=YTQwZjQ0NmI0OA== " target="_blank">
           <v-img src="./assets/images/stk4.png" class="hoverable-img"></v-img>
         </a>
       </v-col>
-      <v-col>
+      <v-col class="pa-sm-6 py-sm-2 py-md-2 pa-md-1 pa-lg-5 pt-lg-0">
         <a href="https://m.facebook.com/TrinityProfessionalAcademy" target="_blank">
           <v-img src="./assets/images/stk5.png" class="hoverable-img"></v-img>
         </a>
       </v-col>
-      <v-col>
+      <v-col class="pa-sm-6 py-sm-2 pa-md-1 pa-lg-5 pt-lg-0">
         <v-dialog v-model="registrationFormVisible" max-width="500">
           <template v-slot:activator>
             <v-img

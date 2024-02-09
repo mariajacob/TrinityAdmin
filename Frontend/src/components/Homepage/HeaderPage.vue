@@ -2,9 +2,9 @@
     <div>
       <!-- Desktop Navigation -->
       <v-app-bar app class="hidden-sm-and-down" height="100%">
-        <v-container>
+        <v-container class="pl-lg-0 pl-md-0">
           <v-row justify="start">
-            <v-col cols="12" class="text-left" lg="2" md="1">
+            <v-col  class="text-left pl-lg-0" lg="2" md="2">
               <v-img
                 src="../../assets/images/logo.png"
                 height="100%"
@@ -12,11 +12,10 @@
               ></v-img>
             </v-col>
             <v-col
-              cols="12"
               lg="10"
               align-self="center"
-              md="11"
-              class="text-right"
+              md="10"
+              class="text-right pr-md-0"
             >
               <v-btn
                 v-for="(item, index) in navItems"
@@ -44,7 +43,7 @@
             </v-col>
           </v-row>
           <v-app-bar-nav-icon @click="mobileMenu = !mobileMenu">
-            <v-icon color="black">mdi-menu</v-icon>
+            <v-icon color="black" class="pr-8">mdi-menu</v-icon>
           </v-app-bar-nav-icon>
         </v-app-bar>
         <v-navigation-drawer
@@ -71,6 +70,7 @@
             </v-row>
           </v-list>
         </v-navigation-drawer>
+      
       </div>
     </div>
   </template>
@@ -135,7 +135,7 @@
   }
   .hdr {
     font-family: archireg;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
   }
   .active-button {

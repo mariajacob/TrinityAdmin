@@ -1,12 +1,12 @@
 <template>
   <div class="pt-16">
     <v-row justify="center">
-      <v-col cols="12" class="text-center head">
+      <v-col cols="12" sm="12" md="12" lg="12" class="text-center head pt-md-8">
         <span style="color: rgb(0, 0, 0)"
           >Contact <span style="color: rgba(248, 141, 47, 1)">Us</span></span
         >
       </v-col>
-      <v-col cols="12" lg="12" class="text-center sub7">
+      <v-col cols="12" sm="12" md="12" lg="12" class="text-center sub7">
         <span
           >Your convenience is our priority. Contact us in the way that suits you best.</span
         >
@@ -171,7 +171,7 @@
       </v-col>
     </v-row> -->
     <v-row justify="center" class="px-6 py-6">
-      <v-col cols="12" align-self="center">
+      <v-col cols="12" sm="12" md="10" align-self="center">
         <v-row justify="center">
           <v-col
           cols="12"
@@ -182,22 +182,23 @@
             style="background-color: rgba(248, 141, 47, 1)"
           >
             <v-row justify="center">
-              <v-col cols="12" class="get" lg="8">
+              <v-col cols="12" class="get px-md-10 " lg="11">
                 Get In Touch with us !</v-col
               >
-              <v-col cols="12" lg="9" class="lor">
+              <v-col cols="12" lg="11" class="lor px-md-10">
                 <span
-                  >"Your thoughts matter. Contact us today to share your ideas, concerns, and inquiries."</span
-                >
+                  >"Your thoughts matter. Contact us today to share your ideas, concerns, and inquiries."</span>
               </v-col>
-              <v-col cols="12" align-self="center" class="text-center">
+              <v-col cols="12" sm="12" md="12" lg="12" align-self="center" class="text-center">
+
+
                 <v-row justify="center">
-                  <v-col cols="3" class="text-right">
+                  <v-col cols="1" sm="1" md="2" lg="2" class="text-right px-0">
                     <v-icon style="color: rgb(255, 255, 255)"
                       >mdi-map-marker</v-icon
                     >
                   </v-col>
-                  <v-col cols="9" class="text-left">
+                  <v-col cols="9" md="9" lg="9" class="text-left">
                     <span class="add"
                       >First Floor ,Lilly Book House <br />Opp. Assumption
                       College <br />
@@ -208,13 +209,15 @@
                     >
                   </v-col>
                 </v-row>
+
+
                 <v-row justify="center">
-                  <v-col cols="3" class="text-right">
-                    <v-icon style="color: rgb(255, 255, 255)">
-                      mdi-map-marker</v-icon
+                  <v-col cols="1" sm="1" md="2" lg="2" class="text-right px-0">
+                    <v-icon style="color: rgb(255, 255, 255)"
+                      >mdi-map-marker</v-icon
                     >
                   </v-col>
-                  <v-col cols="9" class="text-left">
+                  <v-col cols="9" md="9" lg="9" class="text-left">
                     <span class="add"
                       >6,Vellapally Builings,<br />Vellapally Lane<br />
                       Opp.BCM College,KK Road<br />Kottayam -686101<br /><span
@@ -224,22 +227,56 @@
                     >
                   </v-col>
                 </v-row>
+
+
+
+                <!-- <v-row justify="center">
+                  <v-col cols="2" md="3" lg="3" class="text-center px-0">
+                    
+
+
+
+
+                    <v-row justify="end">
+                      <v-col cols="6" md="5" lg="5" class="px-0">
+                        <v-icon style="color: rgb(255, 255, 255)">
+                      mdi-map-marker</v-icon
+                    >
+                      </v-col>
+                    </v-row>
+                    
+                  </v-col>
+                  <v-col cols="10" sm="8" md="8" lg="8" class="text-left">
+                    <span class="add"
+                      >6,Vellapally Builings,<br />Vellapally Lane<br />
+                      Opp.BCM College,KK Road<br />Kottayam -686101<br /><span
+                        class="phn"
+                        >091887 21959<br />asdsdudshdsk@gmail.com</span
+                      ></span
+                    >
+                  </v-col>
+                </v-row> -->
+
+
+
+
+
                 <v-row justify="center">
-                  <v-col cols="1">
+                  <v-col cols="2" sm="2" md="2" lg="2" class="px-lg-3">
                     <a href="" target="_blank">
                       <v-icon style="color: rgb(255, 255, 255)"
                         >mdi-twitter</v-icon
                       >
                     </a>
                   </v-col>
-                  <v-col cols="1">
+                  <v-col cols="2" sm="2" md="2" lg="2" class="px-lg-3">
                     <a href="" target="_blank">
                       <v-icon style="color: rgb(255, 255, 255)"
                         >mdi-facebook</v-icon
                       >
                     </a>
                   </v-col>
-                  <v-col cols="1">
+                  <v-col cols="2" sm="2" md="2" lg="2" class="px-lg-3">
                     <a href="" target="_blank">
                       <v-icon style="color: rgb(255, 255, 255)"
                         >mdi-linkedin</v-icon
@@ -257,10 +294,10 @@
           </v-col>
           <v-col cols="12" lg="6" md="6" sm="6" align-self="center">
             <v-row>
-              <v-col lg="12">
+              <v-col lg="12" cols="12" sm="12" md="12">
                 <v-card elevation="0">
                   <v-row class="pl-4 pr-4 pt-3">
-                    <v-col cols="12" class="pb-5">
+                    <v-col cols="12" sm="12" md="12" lg="12" class="pb-5">
                       <div class="field-label">Name</div>
                       <v-text-field
                         variant="outlined"
@@ -270,7 +307,7 @@
                         clearable
                       ></v-text-field>
                     </v-col>
-                    <v-col cols="12" class="pb-5">
+                    <v-col cols="12" sm="12" md="12" lg="12" class="pb-5">
                       <div class="field-label">E-Mail Address</div>
                       <v-text-field
                         variant="outlined"
@@ -280,7 +317,7 @@
                         clearable
                       ></v-text-field>
                     </v-col>
-                    <v-col cols="12">
+                    <v-col cols="12" sm="12" md="12" lg="12" class="pb-0">
                       <div class="field-label">Qualification</div>
                       <v-select
                         label="Select"
@@ -288,14 +325,14 @@
                         variant="outlined"
                       ></v-select>
                     </v-col>
-                    <v-col cols="12">
+                    <v-col cols="12" sm="12" md="12" lg="12" class="pb-0">
                       <div class="field-label">Intrested Course</div>
                       <v-select label="Select Your Course" :items="courses" v-model="selectedCourse" variant="outlined"></v-select>
 
               <!-- Update the template to use the new computed property name -->
 <v-select v-if="selectedCourse" label="Select Sub-Course" :items="filteredSubCourses" variant="outlined"></v-select>
                     </v-col>
-                    <v-col cols="12">
+                    <v-col cols="12" sm="12" md="12" lg="12" class="pb-5">
                       <div class="field-label">Institute</div>
                       <v-select
                         label="Select"
@@ -305,7 +342,7 @@
                     </v-col>
                   </v-row>
                   <v-row justify="end">
-                    <v-col cols="12" lg="4">
+                    <v-col cols="9" sm="8" md="8" lg="7">
                       <v-card-actions class="pa-3">
                         <v-btn
                           style="
@@ -328,13 +365,13 @@
     </v-row>
   </div>
   <div>
-    <v-row justify="center">
-      <v-col cols="12">
+    <v-row justify="center" class="pb-lg-5">
+      <v-col cols="12" class="pb-lg-16">
         <v-row justify="center">
-          <v-col cols="6" lg="5">
+          <v-col cols="12" sm="6" md="5" lg="4" class="px-lg-0 px-md-5 px-sm-7">
             <v-img src="../../assets/images/map1.png"></v-img>
           </v-col>
-          <v-col cols="6" lg="5">
+          <v-col cols="12" sm="6" md="5" lg="4" class="px-lg-0 px-md-5">
             <v-img src="../../assets/images/map2.png"></v-img>
           </v-col>
         </v-row>

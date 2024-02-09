@@ -78,9 +78,78 @@ const routes = [
     component: () => import('../components/CoursesPage/OurCourses')
   },
   {
-    path: '/coursedetails',
-    name: 'detailedcourse',
-    component: () => import('../components/CoursesPage/DetCourse')
+    path: '/CMADetails',
+    name: 'CMADetails',
+    component: () => import('../components/CoursesPage/CMADetails')
+  },
+  {
+    path: '/CIFADetails',
+    name: 'CIFADetails',
+    component: () => import('../components/CoursesPage/CIFA/CIFADetails.vue')
+  },
+  {
+    path: '/CGPADetails',
+    name: 'CGPADetails',
+    component: () => import('../components/CoursesPage/CGPADetails')
+  },
+  {
+    path: '/ACCADetails',
+    name: 'ACCADetails',
+    component: () => import('../components/CoursesPage/ACCADetails')
+  },
+  {
+    path: '/SAPDetails',
+    name: 'SAPDetails',
+    component: () => import('../components/CoursesPage/SAPDetails')
+  },
+  {
+    path: '/AdvancedExcelDetails',
+    name: 'AdvancedExcelDetails',
+    component: () => import('../components/CoursesPage/AdvancedExcelDetails')
+  },
+  {
+    path: '/GSTDetails',
+    name: 'GSTDetails',
+    component: () => import('../components/CoursesPage/GSTDetails')
+  },
+  {
+    path: '/TallyDetails',
+    name: 'TallyDetails',
+    component: () => import('../components/CoursesPage/TallyDetails')
+  },
+  {
+    path: '/CADetails',
+    name: 'CADetails',
+    component: () => import('../components/CoursesPage/CADetails')
+  },
+  {
+    path: '/ComputerDetails',
+    name: 'ComputerDetails',
+    component: () => import('../components/CoursesPage/ComputerDetails')
+  },
+  {
+    path: '/VisualizationDetails',
+    name: 'VisualizationDetails',
+    component: () => import('../components/CoursesPage/VisualizationDetails')
+  },
+  {
+    path: '/OtherAccountingDetails',
+    name: 'OtherAccountingDetails',
+    component: () => import('../components/CoursesPage/OtherAccountingDetails')
+  },{
+    path: '/OtherCoursesDetails',
+    name: 'OtherCoursesDetails',
+    component: () => import('../components/CoursesPage/OtherCoursesDetails')
+  },
+  {
+    path: '/AIDetails',
+    name: 'AIDetails',
+    component: () => import('../components/CoursesPage/AIDetails')
+  },
+  {
+    path: '/LanguageDetails',
+    name: 'LanguageDetails',
+    component: () => import('../components/CoursesPage/LanguageDetails')
   },
   {
     path: '/gallerypage',

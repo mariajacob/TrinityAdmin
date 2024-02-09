@@ -6,7 +6,7 @@
           >Our <span style="color: rgba(255, 182, 49, 1)">Gallery</span></span
         >
       </v-col>
-      <v-col cols="12" lg="6" class="text-center sub2">
+      <v-col cols="12" lg="6" class="sub2 pa-lg-0 px-8" style="text-align: justify;">
         <span
           >Each photo in our gallery tells a story of determination, teamwork,
           and triumph. They are the milestones on our path to success and the
@@ -14,11 +14,11 @@
         >
       </v-col>
     </v-row>
-    <v-row justify="center" class="px-10">
-      <v-col cols="12" v-for="(image, index) in items" :key="index">
+    <v-row justify="center" class="px-10 px-sm-8 px-md-10">
+      <v-col cols="12" lg="11" sm="12" class="px-sm-0" v-for="(image, index) in items" :key="index">
         <v-card flat style="padding-top: 10px">
-          <v-row>
-            <v-col cols="12" md="4" lg="5" class="pa-3">
+          <v-row justify="center" >
+            <v-col cols="12" sm="12" md="5" lg="5" class="pa-3">
               <!-- Add @click event listener to trigger the selectImage function -->
               <v-img
                 :src="image.one"
@@ -28,8 +28,8 @@
               ></v-img>
             </v-col>
             <v-col justify-start cols="12" md="6" sm="12" class="pa-5">
-              <v-row>
-                <v-col cols="12" md="6">
+              <v-row >
+                <v-col cols="12" md="6" lg="6" sm="12" class="px-sm-0 pt-md-1">
                   <v-img
                     :src="image.two"
                     class="zoom-card"
@@ -41,7 +41,7 @@
                     @click="selectImage(image.two)"
                   ></v-img>
                 </v-col>
-                <v-col cols="12" md="6">
+                <v-col cols="12" sm="12" md="6" class="px-sm-0 px-md-5 px-lg-5 pt-md-1">
                   <v-img
                     :src="image.three"
                     class="zoom-card"
@@ -55,7 +55,7 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col cols="12" md="6">
+                <v-col cols="12" sm="12" md="6" class="px-sm-0 pt-md-1">
                   <v-img
                     :src="image.four"
                     class="zoom-card"
@@ -67,7 +67,7 @@
                     @click="selectImage(image.four)"
                   ></v-img>
                 </v-col>
-                <v-col cols="12" md="6">
+                <v-col cols="12" sm="12" md="6" class="px-sm-0 px-md-5 px-lg-5 pt-md-1">
                   <v-img
                     :src="image.five"
                     class="zoom-card"

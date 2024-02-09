@@ -1,7 +1,7 @@
 <template>
   <div class="pt-16">
     <v-row justify="center">
-      <v-col cols="12" class="text-center head">
+      <v-col cols="12" sm="12" md="12" lg="12" class="text-center head pt-md-8">
         <span>Our</span>
         <span style="color: rgba(255, 182, 49, 1)">&nbsp;Courses</span>
       </v-col>
@@ -12,8 +12,8 @@
       </v-col>
     </v-row>
     <div class="text-center">
-      <v-row justify="center">
-        <v-col cols="12" align-self="center">
+      <v-row justify="center" >
+        <v-col cols="10" align-self="center" class="pt-lg-0">
           <!-- <v-row justify="center" class="pt-10">
             <v-col cols="12">
               <v-row justify="center" class="pt-10">
@@ -48,12 +48,15 @@
           <!-- <v-row justify="center" class="pt-10">
             <v-col cols="12"> -->
               <v-row justify="center" class="pt-10">
-                <v-col cols="12" lg="5" sm="8" class="text-center" align-self="center">
-                  <v-chip-group multiple v-model="selectedChips" class="text-center">
+                <v-col cols="12" lg="10" sm="8" class="text-center px-8 px-lg-3" align-self="center"  >
+                  <v-chip-group style="border-radius: 60px;" multiple v-model="selectedChips" class="text-center ">
                     <template v-for="chip in chips" :key="chip.value">
+                    
                       <v-chip
-                        class="ma-1 text-center"
+                      
+                       px-lg-3 class="ma-1 text-center"
                         label
+                        style="border-radius: 60px;"
                         @click="selectTab(chip.value)"
                         :class="{
                           'highlighted-chip': chip.value === selectedTab,
@@ -70,7 +73,7 @@
           
         </v-col>
         <v-col cols="12" lg="12">
-          <v-row class="px-16 py-16">
+          <v-row class="px-lg-16 pt-lg-3 py-lg-10 pb-lg-16 px-6 py-6 px-sm-8 py-sm-8 px-md-16 py-md-10 pb-md-16">
             <v-col v-if="selectedTab === 'CIFA'" cols="12">
               <v-row class="horizontal">
                 <v-col
@@ -79,6 +82,40 @@
                   md="5"
                   sm="6"
                   v-for="card in cifaCards"
+                  :key="card.id"
+                  align-self="center"
+
+                >
+                  <v-card elevation="10" style="border-radius: 20px">
+                    <div class="image">
+                      <v-img :src="card.image" height="auto" cover></v-img>
+                    </div>
+                    <v-col cols="12">
+                      <v-col cols="12" class="title">
+                        {{ card.title }}
+                      </v-col>
+                      <v-col cols="12" class="subtitle">
+                        {{ card.subtitle }}
+                      </v-col>
+                      <v-col cols="12">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="CIFADetails(card.id)">
+                        Learn More
+                        <v-icon right style="color: black">mdi-arrow-right</v-icon>
+                        </v-btn>
+                      </v-col>
+                    </v-col>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col v-if="selectedTab === 'CGPA'" cols="12">
+              <v-row class="horizontal">
+                <v-col
+                  cols="12"
+                  lg="4"
+                  md="5"
+                  sm="6"
+                  v-for="card in cgpaCards"
                   :key="card.id"
                   align-self="center"
                 >
@@ -94,7 +131,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="detail()">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="CGPADetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -106,14 +143,14 @@
                 </v-col>
               </v-row>
             </v-col>
-            <v-col v-if="selectedTab === 'CGA'" cols="12">
+            <v-col v-if="selectedTab === 'ACCA'" cols="12">
               <v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
-                  v-for="card in cgaCards"
+                  v-for="card in accaCards"
                   :key="card.id"
                   align-self="center"
                 >
@@ -129,7 +166,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="ACCADetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -144,7 +181,7 @@
             <v-col v-if="selectedTab === 'SAP'" cols="12">
               <v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -164,7 +201,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="detail()">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="SAPDetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -179,7 +216,7 @@
             <v-col v-if="selectedTab === 'Advanced Excel'" cols="12">
               <v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -199,7 +236,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="detail()">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="AdvancedExcelDetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -214,7 +251,7 @@
             <v-col v-if="selectedTab === 'GST Course'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -234,7 +271,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="detail()">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="GSTDetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -249,7 +286,7 @@
             <v-col v-if="selectedTab === 'Tally'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -269,7 +306,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="detail()">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="TallyDetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -284,7 +321,7 @@
             <v-col v-if="selectedTab === 'CMA'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -304,7 +341,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="detail()">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="CMADetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -319,7 +356,7 @@
             <v-col v-if="selectedTab === 'CA'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -339,7 +376,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols=" 12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="detail()">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="CADetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -354,7 +391,7 @@
             <v-col v-if="selectedTab === 'Computer Courses'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -374,7 +411,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="detail()">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="ComputerDetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -389,7 +426,7 @@
             <v-col v-if="selectedTab === 'AI'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -409,7 +446,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="detail()">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="AIDetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -419,12 +456,12 @@
                     </v-col>
                   </v-card>
                 </v-col>
-              </v-row></v-col
-            >
+              </v-row>
+            </v-col>
             <v-col v-if="selectedTab === 'Language Courses'" cols="12"
               ><v-row class="horizontal">
                 <v-col
-                  cols="4"
+                  cols="12"
                   lg="4"
                   md="5"
                   sm="6"
@@ -444,7 +481,7 @@
                         {{ card.subtitle }}
                       </v-col>
                       <v-col cols="12">
-                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="detail()">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="LanguageDetails(card.id)">
                           Learn More
                           <v-icon right style="color: black"
                             >mdi-arrow-right</v-icon
@@ -454,8 +491,114 @@
                     </v-col>
                   </v-card>
                 </v-col>
-              </v-row></v-col
-            >
+              </v-row>
+            </v-col>
+            <v-col v-if="selectedTab === 'Visualization software'" cols="12"
+              ><v-row class="horizontal">
+                <v-col
+                  cols="12"
+                  lg="4"
+                  md="5"
+                  sm="6"
+                  v-for="card in vsCards"
+                  :key="card.id"
+                  align-self="center"
+                >
+                  <v-card elevation="10" style="border-radius: 20px">
+                    <div class="image">
+                      <v-img :src="card.image" height="auto" cover></v-img>
+                    </div>
+                    <v-col cols="12">
+                      <v-col cols="12" class="title">
+                        {{ card.title }}
+                      </v-col>
+                      <v-col cols="12" class="subtitle">
+                        {{ card.subtitle }}
+                      </v-col>
+                      <v-col cols="12">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="VisualizationDetails(card.id)">
+                          Learn More
+                          <v-icon right style="color: black"
+                            >mdi-arrow-right</v-icon
+                          >
+                        </v-btn>
+                      </v-col>
+                    </v-col>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col v-if="selectedTab === 'Other Accounting Courses'" cols="12"
+              ><v-row class="horizontal">
+                <v-col
+                  cols="12"
+                  lg="4"
+                  md="5"
+                  sm="6"
+                  v-for="card in otheraccountingCards"
+                  :key="card.id"
+                  align-self="center"
+                >
+                  <v-card elevation="10" style="border-radius: 20px">
+                    <div class="image">
+                      <v-img :src="card.image" height="auto" cover></v-img>
+                    </div>
+                    <v-col cols="12">
+                      <v-col cols="12" class="title">
+                        {{ card.title }}
+                      </v-col>
+                      <v-col cols="12" class="subtitle">
+                        {{ card.subtitle }}
+                      </v-col>
+                      <v-col cols="12">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="OtherAccountingDetails(card.id)">
+                          Learn More
+                          <v-icon right style="color: black"
+                            >mdi-arrow-right</v-icon
+                          >
+                        </v-btn>
+                      </v-col>
+                    </v-col>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col v-if="selectedTab === 'Other Courses'" cols="12"
+              ><v-row class="horizontal">
+                <v-col
+                  cols="12"
+                  lg="4"
+                  md="5"
+                  sm="6"
+                  v-for="card in lifeCards"
+                  :key="card.id"
+                  align-self="center"
+                >
+                  <v-card elevation="10" style="border-radius: 20px">
+                    <div class="image">
+                      <v-img :src="card.image" height="auto" cover></v-img>
+                    </div>
+                    <v-col cols="12">
+                      <v-col cols="12" class="title">
+                        {{ card.title }}
+                      </v-col>
+                      <v-col cols="12" class="subtitle">
+                        {{ card.subtitle }}
+                      </v-col>
+                      <v-col cols="12">
+                        <v-btn style="color: rgba(255, 182, 49, 1)" class="learn" variant="text" @click="OtherCoursesDetails(card.id)">
+                          Learn More
+                          <v-icon right style="color: black"
+                            >mdi-arrow-right</v-icon
+                          >
+                        </v-btn>
+                      </v-col>
+                    </v-col>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-col>
+
           </v-row>
         </v-col>
       </v-row>
@@ -508,7 +651,8 @@ export default {
       selectedChips: [],
       chips: [
         { label: "CIFA", value: "CIFA" },
-        { label: "CGA", value: "CGA" },
+        { label: "CGPA", value: "CGPA" },
+        { label: "ACCA", value: "ACCA" },
         { label: "SAP HANA", value: "SAP" },
         { label: "Advanced Excel", value: "Advanced Excel" },
         { label: "GST Course", value: "GST Course" },
@@ -518,6 +662,9 @@ export default {
         { label: "Computer Courses", value: "Computer Courses" },
         { label: "AI", value: "AI" },
         { label: "Language Courses", value: "Language Courses" },
+        { label: "Visualization software", value: "Visualization software" },
+        { label: "Other Accounting Courses", value: "Other Accounting Courses" },
+        { label: "Other Courses", value: "Other Courses" },
         // { label: "Tally", value: "Tally" },
         // { label: "CIFA", value: "CIFA" },
         // { label: "CGA", value: "CGA" },
@@ -532,21 +679,56 @@ export default {
         {
           id: 1,
           image: require("@/assets/images/card1.png"),
-          title: "CIFA Basic",
+          title: "CIFA ",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 2,
           image: require("@/assets/images/card2.png"),
-          title: "CIFA Basic Plus",
+          title: "CIFA Basic (Fast Track)",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 3,
           image: require("@/assets/images/card3.png"),
-          title: "CIFA Pro",
+          title: "CIFA Basic (Normal Track) ",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+        {
+          id: 4,
+          image: require("@/assets/images/card3.png"),
+          title: "CIFA Basic Plus(Normal Track) ",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+        {
+          id: 5,
+          image: require("@/assets/images/card3.png"),
+          title: "CIFA Basic Plus(Fast Track) ",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+        {
+          id: 6,
+          image: require("@/assets/images/card3.png"),
+          title: "CIFA (Professional)",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+        {
+          id: 7,
+          image: require("@/assets/images/card3.png"),
+          title: "CIFA (Professional)",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+        {
+          id: 8,
+          image: require("@/assets/images/card3.png"),
+          title: "CIFA (Advanced)",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
@@ -555,7 +737,7 @@ export default {
         {
           id: 1,
           image: require("@/assets/images/card2.png"),
-          title: "IELTS",
+          title: "IELTS/UKVI",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
@@ -570,20 +752,6 @@ export default {
           id: 3,
           image: require("@/assets/images/card2.png"),
           title: "SPOKEN ENGLISH",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 4,
-          image: require("@/assets/images/card2.png"),
-          title: "GERMAN",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 5,
-          image: require("@/assets/images/card2.png"),
-          title: "FRENCH",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
@@ -611,32 +779,41 @@ export default {
             "Global supply chain management, international shipping, and trade compliance.",
         },
       ],
-      cgaCards: [
+      cgpaCards: [
         {
           id: 1,
           image: require("@/assets/images/card2.png"),
-          title: "CGA Basic",
+          title: "CGFA-Certified Gulf Financial Accountant",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 2,
           image: require("@/assets/images/card3.png"),
-          title: "CGA Basic Plus",
+          title: "CGFA-Certified Gulf Financial Accountant - ( Normal Track  )",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 3,
-          image: require("@/assets/images/card1.png"),
-          title: "CGA Pro",
+          image: require("@/assets/images/card3.png"),
+          title: "CGPA-Certified Gulf Professional  Accountant - (FAST Track)",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 4,
           image: require("@/assets/images/card3.png"),
-          title: "CGA Basic Plus",
+          title: "CGPA-Certified Gulf Professional  Accountant",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+      ],
+      accaCards: [
+        {
+          id: 1,
+          image: require("@/assets/images/card2.png"),
+          title: "ACCA (Association of Chartered Certified Accountants)",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
@@ -645,28 +822,21 @@ export default {
         {
           id: 1,
           image: require("@/assets/images/card2.png"),
-          title: "FICO",
+          title: "SAP S4 HANA FINANCE MODULE",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 2,
           image: require("@/assets/images/card3.png"),
-          title: "SD",
+          title: "S4 HANA SD MODULE",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 3,
           image: require("@/assets/images/card1.png"),
-          title: "MM",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 4,
-          image: require("@/assets/images/card1.png"),
-          title: "PP",
+          title: "SAP S4 HANA MM Module",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
@@ -675,51 +845,38 @@ export default {
         {
           id: 1,
           image: require("@/assets/images/card2.png"),
-          title: "ADVANCED Basic",
+          title: "ADVANCED EXCEL",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
-        {
-          id: 2,
-          image: require("@/assets/images/card3.png"),
-          title: "ADVANCED Basic Plus",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 3,
-          image: require("@/assets/images/card1.png"),
-          title: "ADVANCED Pro",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
-        {
-          id: 4,
-          image: require("@/assets/images/card2.png"),
-          title: "ADVANCED Basic",
-          subtitle:
-            "Global supply chain management, international shipping, and trade compliance.",
-        },
+        
       ],
       gstCards: [
         {
           id: 1,
           image: require("@/assets/images/card2.png"),
-          title: "GST Basic",
+          title: "GST Using Tally Prime & GST simulation Software",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 2,
           image: require("@/assets/images/card3.png"),
-          title: "GST Basic Plus",
+          title: "GST simulation Software",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 3,
           image: require("@/assets/images/card1.png"),
-          title: "GST Pro",
+          title: "GST Using Tally PRIME",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+        {
+          id: 4,
+          image: require("@/assets/images/card1.png"),
+          title: "GCC-VAT Using Tally PRIME",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
@@ -728,28 +885,28 @@ export default {
         {
           id: 1,
           image: require("@/assets/images/card2.png"),
-          title: "TALLY Basic",
+          title: "TALLY Essential -Level 1",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 2,
           image: require("@/assets/images/card3.png"),
-          title: "TALLY Basic Plus",
+          title: "TALLY Essential -Level 2",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 3,
           image: require("@/assets/images/card1.png"),
-          title: "TALLY Pro",
+          title: "TALLY Essential -Level 3",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 4,
           image: require("@/assets/images/card3.png"),
-          title: "TALLY Basic Plus",
+          title: "TALLY Essential Comprehensive",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
@@ -776,77 +933,105 @@ export default {
         {
           id: 1,
           image: require("@/assets/images/card2.png"),
-          title: "MSOFFICE Suite",
+          title: "DCA-Diploma in Computer Applications",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 2,
           image: require("@/assets/images/card2.png"),
-          title: "PYTHON",
+          title: "DOA-Diploma in Computer Automation",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 3,
           image: require("@/assets/images/card2.png"),
-          title: "Django using Python",
+          title: "EL Office (FRONT OFFICE)",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 4,
           image: require("@/assets/images/card2.png"),
-          title: "HTML",
+          title: "MS OFFICE ",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 5,
           image: require("@/assets/images/card2.png"),
-          title: "CSS",
+          title: "C++ (Basic -Level) for beginners",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 6,
           image: require("@/assets/images/card2.png"),
-          title: "C++",
+          title: "PHOTOSHOP (Basic -Level) for beginners",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 7,
           image: require("@/assets/images/card2.png"),
-          title: "JAVA",
+          title: "PYTHON (Basic -Level) for beginners",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
           id: 8,
           image: require("@/assets/images/card2.png"),
-          title: "Photoshop",
+          title: "ISM (Basic -Level) for beginners",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+        
+      ],
+      vsCards: [
+        {
+          id: 1,
+          image: require("@/assets/images/card2.png"),
+          title: "Microsoft Power BI",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
-          id: 9,
+          id: 2,
           image: require("@/assets/images/card2.png"),
-          title: "Diploma in Computer Application (DCA)",
+          title: "TABLEAU",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+      ],
+      lifeCards: [
+        {
+          id: 1,
+          image: require("@/assets/images/card2.png"),
+          title: "Life skill Training",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
-          id: 10,
+          id: 2,
           image: require("@/assets/images/card2.png"),
-          title: "Diploma in Office Automation Course (DOA)",
+          title: "Summer Coaching Classes",
+          subtitle:
+            "Global supply chain management, international shipping, and trade compliance.",
+        },
+      ],
+      otheraccountingCards: [
+        {
+          id: 1,
+          image: require("@/assets/images/card2.png"),
+          title: "Peach Tree/SAGE 50",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
         {
-          id: 11,
+          id: 2,
           image: require("@/assets/images/card2.png"),
-          title: "Digital Marketing",
+          title: "QUICKBOOKS",
           subtitle:
             "Global supply chain management, international shipping, and trade compliance.",
         },
@@ -863,13 +1048,111 @@ export default {
     showMoreChips() {
       this.showChips += 4; // Show more chips
     },
-    detail(){
-      this.$router.push("/coursedetails");
+    CMADetails(cardId){
+      this.$router.push({ name: 'CMADetails', query: { cardId } });
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
       });
-    }
+    },
+    CIFADetails(cardId) {
+    this.$router.push({ name: 'CIFADetails', query: { cardId } });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+},
+    CGPADetails(cardId){
+      this.$router.push({ name: 'CGPADetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    ACCADetails(cardId){
+      this.$router.push({ name: 'ACCADetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      }); 
+    },
+    SAPDetails(cardId){
+      this.$router.push({ name: 'SAPDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    AdvancedExcelDetails(cardId){
+      this.$router.push({ name: 'AdvancedExcelDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    GSTDetails(cardId){
+      this.$router.push({ name: 'GSTDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    TallyDetails(cardId){
+      this.$router.push({ name: 'TallyDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    CADetails(){
+      this.$router.push("/CADetails");
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    ComputerDetails(cardId){
+      this.$router.push({ name: 'ComputerDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    AIDetails(){
+      this.$router.push("/AIDetails");
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    LanguageDetails(cardId){
+      this.$router.push({ name: 'LanguageDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    OtherCoursesDetails(cardId){
+      this.$router.push({ name: 'OtherCoursesDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    VisualizationDetails(cardId){
+      this.$router.push({ name: 'VisualizationDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+    OtherAccountingDetails(cardId){
+      this.$router.push({ name: 'OtherAccountingDetails', query: { cardId } });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
   },
   computed: {
     visibleChips() {
@@ -881,3 +1164,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.chipboarder{
+  border-radius: 50px;
+}
+</style>

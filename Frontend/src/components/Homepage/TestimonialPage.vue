@@ -1,12 +1,12 @@
 <template>
   <div style="background-color: rgba(250, 123, 68, 1)" class="pt-lg-16 pb-lg-16">
     <v-row justify="center">
-      <v-col cols="12" align-self="center" class="text-center head">
+      <v-col cols="12" align-self="center" class="text-center head px-lg-0 px-6">
         <span style="color: rgb(255, 255, 255)"
           >What Student <span style="color: rgb(0, 0, 0)">says</span></span
         >
       </v-col>
-      <v-col cols="12" class="text-center sub5" lg="6">
+      <v-col cols="12" class="sub5 px-lg-0 px-8" lg="6" style="text-align: justify;">
         <span
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore sed do eiusmod tempor incididunt
@@ -15,7 +15,7 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-    <v-col cols="12">
+    <v-col cols="12" class="px-lg-0 px-5 pb-lg-0 pb-9 px-sm-8">
       <v-carousel
         cycle
         hide-delimiter-background

@@ -1,7 +1,7 @@
 <template>
   <div class="pt-16 pb-16">
     <v-row justify="center">
-      <v-col cols="12" class="text-center head">
+      <v-col cols="12" sm="12" md="12" lg="12" class="text-center head">
         <span>Blog<span style="color: rgba(248, 141, 47, 1)">s</span></span>
       </v-col>
       <v-col cols="11" lg="6" md="7" sm="7" class="text-center sub">
@@ -13,7 +13,7 @@
       </v-col>
     </v-row>
     <v-row justify="center" class="pt-10">
-        <v-col align-self="center" cols="12" lg="4" sm="4" md="4">
+        <v-col align-self="center" cols="12" lg="4" sm="10" md="6" class="px-lg-4 px-8">
             <v-text-field
         v-model="search"
         append-icon="mdi-magnify"
@@ -22,24 +22,24 @@
         hide-details
       ></v-text-field>
         </v-col>
-      <v-col cols="11">
-        <v-row justify="center">
-          <v-col v-for="(item, index) in items" :key="index" cols="12" lg="4">
+      <v-col cols="11" >
+        <v-row justify="center" class="px-lg-4 px-2">
+          <v-col v-for="(item, index) in items" :key="index" cols="12" sm="12" md="4" lg="4" >
             <v-card elevation="0">
               <v-img :src="item.image"></v-img>
               <div class="pt-5">
                 <v-row>
-                    <v-col cols="12" lg="3" class="text-center" style="background-color: rgba(114, 162, 255, 0.17) ;"><span style="color: rgba(41, 99, 183, 1);">Education</span></v-col>
+                    <v-col cols="12" lg="3" class="text-center " style="background-color: rgba(114, 162, 255, 0.17) ;"><span style="color: rgba(41, 99, 183, 1);">Education</span></v-col>
                   <v-col cols="12">
                 <span class="subb">{{ item.title }}</span></v-col>
                 <v-row justify="start" class="px-3">
-                  <v-col cols="1" lg="1" md="1" sm="1">
+                  <v-col cols="1" lg="1" md="1" sm="1" class="pa-md-2">
                     <v-avatar><v-img :src="item.avatar"></v-img></v-avatar>
                   </v-col>
-                  <v-col cols="5" lg="4" md="4" sm="4" align-self="center" class="name"><span>&nbsp;&nbsp;&nbsp;{{ item.name }}</span></v-col>
-                  <v-col cols="1" lg="1" md="1" sm="1" align-self="center"><span>|</span></v-col>
-                  <v-col cols="1" lg="1" md="1" sm="1" class="pa-0" align-self="center"><v-icon>mdi-calendar-range</v-icon></v-col>
-                  <v-col cols="4" lg="3" md="3" sm="3" class="pa-0 name" align-self="center"><span>{{ item.date }}</span></v-col>
+                  <v-col cols="10" lg="4" md="4" sm="4" align-self="center" class=" name pl-5 pl-sm-1 pl-md-5 pr-md-0 pl-lg-1"><span>&nbsp;&nbsp;&nbsp;{{ item.name }}</span></v-col>
+                  <v-col cols="1" lg="1" md="1" sm="1" align-self="center" class="pa-md-0"><span>|</span></v-col>
+                  <v-col cols="1" lg="1" md="1" sm="1" class="pa-0 pl-5 pl-sm-0 pl-md-0 pl-lg-0" align-self="center"><v-icon>mdi-calendar-range</v-icon></v-col>
+                  <v-col cols="10" lg="3" md="4" sm="3" class="pa-0 name pl-8 pl-sm-0 pl-md-0 pl-lg-0 pb-lg-0 pb-md-0 pb-sm-0 pb-8" align-self="center"><span>{{ item.date }}</span></v-col>
                 </v-row>
                 <v-col cols="12" lg="10">
                   <span class="desc">{{ item.description }}</span></v-col>
