@@ -38,7 +38,6 @@ module.exports = async function (req, res, next) {
                     return;
                 }
                 req.user.user = userExists;
-                console.log(userExists)
                 next();
             }
             else {
@@ -64,4 +63,4 @@ module.exports = async function (req, res, next) {
         });
         return
     }
-}
+}//192.168.48.129:4000

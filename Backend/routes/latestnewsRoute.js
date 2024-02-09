@@ -7,7 +7,7 @@ const latestnewsModel = require("../models/latestnewsModel");
 
 
 //Latest News
-router.post('/latestnews', adminAuth, async (req, res) => {
+router.post('/latestnews/add', adminAuth, async (req, res) => {
 
     try {
         var { news, link } = req.body;

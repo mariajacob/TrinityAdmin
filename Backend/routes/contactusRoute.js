@@ -44,7 +44,7 @@ router.post('/contactus/form', async (req, res) => {
             return
         }
 
-        await contactusModel.create({ name: name, emial: email,quali:quali, inCourse: course, institute: institute ,status: 'active' });
+        await contactusModel.create({ name:name, email:email, quali:quali, inCourse:course, institute:institute});
         res.status(200).json({
             status: true,
             msg: 'Got all inputs and Added Successfully'
@@ -61,8 +61,6 @@ router.post('/contactus/form', async (req, res) => {
         });
         return
     }
-
-
 
 })
 
@@ -106,5 +104,9 @@ router.post('/contactus/singleview',adminAuth, async(req,res)=>{
         console.log('err')
     }
 })
+
+
+
+
 
 module.exports = router;
