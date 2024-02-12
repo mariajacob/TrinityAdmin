@@ -150,48 +150,48 @@ router.post('/admin/login',async(req,res)=>{
     }
 })
 
-router.get('/validate/token',ifToken,async(req,res)=>{
-    try{
-        var { token } = req.headers;
-        if(!token)
-        {
-            res.status(200).json({
-                status:false,
-                msg:'invalid token'
-            });
-            return
-        }
-        var tokenData =await jwt.verify(token,defaults.token)
-        var validToken =await tokenModel.findOne({token:token,userid:tokenData.id})
-        if(!validToken){
-            res.status(200).json({
-                status:false,
-                msg:"Invalid Token"
-            });
-            return;
-        }
-        var userExists = await userModel.findOne({status:"Active",_id:tokenData.id})
-        if(!userExists){
-            res.status(200).json({
-                status:false,
-                msg:"Invalid user."
-            });
-            return;
-        }
-        res.status(200).json({
-            status:true,
-            msg:"Validated Sucessfully."
-        });
-        return;
-    }catch(e){
-        console.log(e)
-        res.status(500).json({
-            status:false,
-            msg:'internal server errort'
-        });
-        return
-    }
-})
+// router.get('/validate/token',ifToken,async(req,res)=>{
+//     try{
+//         var { token } = req.headers;
+//         if(!token)
+//         {
+//             res.status(200).json({
+//                 status:false,
+//                 msg:'invalid token'
+//             });
+//             return
+//         }
+//         var tokenData =await jwt.verify(token,defaults.token)
+//         var validToken =await tokenModel.findOne({token:token,userid:tokenData.id})
+//         if(!validToken){
+//             res.status(200).json({
+//                 status:false,
+//                 msg:"Invalid Token"
+//             });
+//             return;
+//         }
+//         var userExists = await userModel.findOne({status:"Active",_id:tokenData.id})
+//         if(!userExists){
+//             res.status(200).json({
+//                 status:false,
+//                 msg:"Invalid user."
+//             });
+//             return;
+//         }
+//         res.status(200).json({
+//             status:true,
+//             msg:"Validated Sucessfully."
+//         });
+//         return;
+//     }catch(e){
+//         console.log(e)
+//         res.status(500).json({
+//             status:false,
+//             msg:'internal server errort'
+//         });
+//         return
+//     }
+// })
 
 module.exports = router;
 

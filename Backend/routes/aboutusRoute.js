@@ -53,40 +53,39 @@ router.post('/aboutus/add', adminAuth, async (req, res) => {
 })
 
 
-router.get('/aboutus/list', adminAuth, async (req, res) => {
-    try {
-        var list = await aboutusModel.find({ status:"Active"});
-        if (list) {
-            res.status(200).json({
-                status: true,
-                reviews: list,
-                msg: "Successful"
-            })
-            return
-        }
-        res.status(200).json({
-            status: false,
-            msg: "Records not found"
-        })
-    } catch (e) {
-        console.log(e)
-        res.status(500).json({
-            status: false,
-            msg: 'internal server errort'
-        });
-        return
-    }
-})
+// router.get('/aboutus/list', adminAuth, async (req, res) => {
+//     try {
+//         var list = await aboutusModel.find({ status:"Active"});
+//         if (list) {
+//             res.status(200).json({
+//                 status: true,
+//                 reviews: list,
+//                 msg: "Successful"
+//             })
+//             return
+//         }
+//         res.status(200).json({
+//             status: false,
+//             msg: "Records not found"
+//         })
+//     } catch (e) {
+//         console.log(e)
+//         res.status(500).json({
+//             status: false,
+//             msg: 'internal server errort'
+//         });
+//         return
+//     }
+// })
 
-router.post('/aboutus/singleview', adminAuth, async (req, res) => {
+router.get('/aboutus/singleview', adminAuth, async (req, res) => {
     try {
-        var { id } = req.body;
-        var singleview = await aboutusModel.findOne({ _id: id , status:"Active"});
+        var singleview = await aboutusModel.findOne({ status:"Active"});
         if (singleview) {
             res.status(200).json({
                 status: true,
                 review: singleview,
-                msg: "Single Student Record"
+                msg: "About Us "
             })
             return
         }

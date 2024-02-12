@@ -1,7 +1,6 @@
 const express = require("express");
 var router = express.Router();
 
-const placementModel = require("../models/discoverDetailsModel");
 const adminAuth = require("../middlewares/adminAuth");
 const discoverDetailsModel = require("../models/discoverDetailsModel");
 

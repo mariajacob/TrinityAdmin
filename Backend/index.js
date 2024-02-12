@@ -17,7 +17,8 @@ var discoverDetailsRoute =require("./routes/discoverDetailsRoute")
 var tailsectionRoute =require("./routes/tailsectionRoute")
 var aboutusRoute =require("./routes/aboutusRoute")
 var courseAndCategoryRoute =require("./routes/courseAndCategoryRoute")
-var galleryRoute =require("./routes/galleryRoute")
+var galleryRoute =require("./routes/videogalleryRoute")
+var ourteamRoute =require("./routes/ourteamRoute")
 
 
 //BODYPARSER
@@ -77,8 +78,8 @@ app.use(discoverDetailsRoute);
 app.use(tailsectionRoute);
 app.use(courseAndCategoryRoute);
 app.use(aboutusRoute);
-app.use(galleryRoute)
-
+app.use(galleryRoute);
+app.use(ourteamRoute);
 
 
 

@@ -9,30 +9,47 @@ const adminAuth = require("../middlewares/adminAuth");
 router.post('/category/addcoursecategory', adminAuth, async (req, res) => {
     try {
         var { catName, desc } = req.body;
+        console.log(req.body, "body")
         if (!catName) {
+            console.log("1")
             res.status(200).json({
                 status: false,
                 msg: 'invalid catName'
             });
             return
         }
+        console.log("2")
+
         if (!desc) {
+            console.log("3")
             res.status(200).json({
                 status: false,
                 msg: 'Invalid Input for Description'
             });
             return
         }
-        await courseCategoryModel.create({ catName: catName, desc: desc });
+        console.log("4")
+
+        // var newCat = await courseCategoryModel.create({ catName: catName, desc: desc });
+        // if (newCat) {
+        var newCat = new courseCategoryModel({
+            catName: catName,
+            desc: desc
+        })
+        console.log("5")
+        await newCat.save()
+        console.log("newCat",newCat)
         res.status(200).json({
             status: true,
-            msg: 'New Course Category Added Successfully'
+            msg: 'New Course Category Added Successfully',
+            data: newCat
         })
+        console.log("6")
         return
-
+        // }
 
     } catch (e) {
-        console.log("Category Not Added to the database")
+        console.log("Category Not Added to the database",e)
         res.status(500).json({
             status: false,
             msg: 'internal server errort'
@@ -46,11 +63,25 @@ router.post('/category/addcoursecategory', adminAuth, async (req, res) => {
 //List Course Category
 router.get('/category/list', adminAuth, async (req, res) => {
     try {
-        var list = await courseCategoryModel.find({ status: "Active" });
+        var { page,limit } = req.query;
+        var pageNo = 0,dataLimit = 0;
+        if((page)&&(limit)){
+            page = parseInt(page);
+            limit = parseInt(limit);
+            if((typeof page == "number" )&&(typeof limit == "number" )&&(page>0)&&(limit>0)){
+                pageNo = page;
+                dataLimit = limit;
+            }
+        }
+        var totalLength = await courseCategoryModel.countDocuments({ status: "Active" });
+        var list = await courseCategoryModel.find({ status: "Active" }).sort({create_date:-1}).skip(((pageNo-1)*dataLimit)).limit(dataLimit);
         if (list) {
             res.status(200).json({
                 status: true,
+                totalLength:totalLength,
                 reviews: list,
+                page:pageNo,
+                limit:dataLimit,
                 msg: "Returned All Course Cats"
             })
             return
@@ -149,7 +180,6 @@ router.post('/category/delete', adminAuth, async (req, res) => {
             console.log(data._id)
             var activeId = data._id
             var activeCategory = await courseModel.find({ category: activeId })
-            console.log(activeCategory, 'active')
             if (activeCategory.length <= 0) {
                 data.status = "Deleted"
                 await data.save()
@@ -181,13 +211,14 @@ router.post('/category/delete', adminAuth, async (req, res) => {
 })
 
 
+
+
 //-------------------------------------------Courses----------------------------------------------//
 
 //Add Course
 router.post('/courses/addcourse', adminAuth, async (req, res) => {
     try {
-        var { courseName, overview, image, course_info, duration, certi_image1, certi_image2,
-            certi_image3, certi_name1, certi_name2, certi_name3, category } = req.body;
+        var { courseName, overview, course_info, duration, certi_name1, certi_name2, certi_name3, category } = req.body;
         if (!courseName) {
             res.status(200).json(
                 {
@@ -318,6 +349,32 @@ router.post('/courses/addcourse', adminAuth, async (req, res) => {
 //List Course
 router.get('/courses/list', adminAuth, async (req, res) => {
     try {
+
+        var { page,limit } = req.query;
+        var pageNo = 0,dataLimit = 0;
+        if((page)&&(limit)){
+            page = parseInt(page);
+            limit = parseInt(limit);
+            if((typeof page == "number" )&&(typeof limit == "number" )&&(page>0)&&(limit>0)){
+                pageNo = page;
+                dataLimit = limit;
+            }
+        }
+
+        var totalLength = await courseModel.countDocuments({ status: "Active" });
+        var list = await courseModel.find({ status: "Active" }).sort({create_date:-1}).skip(((pageNo-1)*dataLimit)).limit(dataLimit);
+        if (list) {
+            res.status(200).json({
+                status: true,
+                totalLength:totalLength,
+                reviews: list,
+                page:pageNo,
+                limit:dataLimit,
+                msg: "Returned All Course Cats"
+            })
+            return
+        }
+
         var list = await courseModel.find({ status: "Active" });
         if (list) {
             res.status(200).json({
@@ -369,14 +426,13 @@ router.post('/courses/singleview', adminAuth, async (req, res) => {
         return
     }
 })
- 
+
 //Edit Course
 router.post('/courses/update', adminAuth, async (req, res) => {
 
     try {
 
-        var { id,  courseName, overview, image, course_info, duration, certi_image1, certi_image2,
-            certi_image3, certi_name1, certi_name2, certi_name3, category  } = req.body
+        var { id, courseName, overview, course_info, duration, certi_name1, certi_name2, certi_name3, category } = req.body
         if (!id) {
             res.status(200).json({
                 status: false,
@@ -399,7 +455,7 @@ router.post('/courses/update', adminAuth, async (req, res) => {
             if (certi_name2)
                 update.certi_name2 = certi_name2
             if (certi_name3)
-                update.certi_name3 = certi_name3 
+                update.certi_name3 = certi_name3
             if (category)
                 update.category = category
             await update.save()

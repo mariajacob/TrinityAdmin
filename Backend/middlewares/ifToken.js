@@ -30,7 +30,7 @@ module.exports = async function (req, res, next) {
                     return;
                 }
                 req.user.user = userExists;
-                console.log(userExists)
+                // console.log(userExists)
                 next();
             }
             else {
