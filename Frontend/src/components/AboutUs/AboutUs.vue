@@ -69,7 +69,7 @@ Students, be they ordinary graduates or ones with professional degrees like BTec
 
        <v-row>
   <!-- Vision Section -->
-  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16" style="background-color: rgba(58, 129, 230, 1)">
+  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16 px-lg-10 px-md-16 px-sm-16 px-12" style="background-color: rgba(58, 129, 230, 1)">
     <span style="color: white;">Our</span> <span style="color: rgba(255, 182, 49, 1);">Vision</span>
     <v-row justify="center">
       <v-col cols="12" lg="10" style="text-align: center;" class="px-4">
@@ -79,7 +79,7 @@ Students, be they ordinary graduates or ones with professional degrees like BTec
   </v-col>
 
   <!-- Mission Section -->
-  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16" style="background-color: rgba(58, 129, 230, 1)">
+  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16 px-lg-10 px-md-16 px-sm-16 px-12" style="background-color: rgba(58, 129, 230, 1)">
     <span style="color: white;">Our</span> <span style="color: rgba(255, 182, 49, 1);">Mission</span>
     <v-row justify="center">
       <v-col cols="12" lg="10" style="text-align: justify;" class="px-4">
@@ -89,7 +89,7 @@ Students, be they ordinary graduates or ones with professional degrees like BTec
   </v-col>
 
   <!-- Skills Section -->
-  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16" style="background-color: rgba(58, 129, 230, 1)">
+  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16 px-lg-10 px-md-16 px-sm-16 px-12" style="background-color: rgba(58, 129, 230, 1)">
     <span style="color: white;">Our</span> <span style="color: rgba(255, 182, 49, 1);">Skills</span>
     <v-row justify="center">
       <v-col cols="12" lg="10" style="text-align: justify;" class="px-4">
@@ -116,7 +116,7 @@ Students, be they ordinary graduates or ones with professional degrees like BTec
   </v-col>
 
   <!-- Benefits Section -->
-  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16" style="background-color: rgba(58, 129, 230, 1)">
+  <v-col cols="12" md="6" class="text-center vis pt-16 pb-16 px-lg-10 px-md-16 px-sm-16 px-12" style="background-color: rgba(58, 129, 230, 1)">
     <span style="color: white;">Our</span> <span style="color: rgba(255, 182, 49, 1);">Benefits</span>
     <v-row justify="center">
       <v-col cols="12" lg="10" style="text-align: justify;" class="px-4">
