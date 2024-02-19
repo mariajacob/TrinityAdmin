@@ -9,7 +9,8 @@
     />
     <v-row>
       <v-col>
-        <v-card color="#87b2f8" height="60px">
+        <!-- Toolbar with "Add About Us" button -->
+        <v-card color="#81bec9" height="60px">
           <v-row justify="center" class="px-8">
             <v-col
               cols="12"
@@ -19,7 +20,7 @@
               class="pt-5 pl-15"
             >
               <span style="color: white; font-size: 25px; font-weight: bold"
-                >Reviews
+                >Course Category
               </span>
             </v-col>
             <!-- </v-row>
@@ -34,27 +35,27 @@
               class="text-right pt-4"
             >
               <v-btn
-                @click="dialogAddReview = true"
+                @click="dialogAdd = true"
                 class="ma-2"
                 variant="outlined"
                 color="white"
-                >Add Review
+                >Add Category
                 <v-icon end icon="mdi-plus"></v-icon>
               </v-btn>
             </v-col>
           </v-row>
         </v-card>
 
-        <v-dialog v-model="dialogAddReview" width="600px" persistent>
+        <v-dialog v-model="dialogAdd" width="600px" persistent>
           <v-card class="pa-4" style="margin-top: 40px">
             <v-row>
               <v-col cols="11">
                 <v-card-title class="text-h5 text-center" style="color: #0b5de1"
-                  >ADD REVIEWS</v-card-title
+                  >ADD CATEGORY DETAILS</v-card-title
                 >
               </v-col>
               <v-col cols="1">
-                <v-icon @click="dialogAddReview = false">mdi-close</v-icon>
+                <v-icon @click="dialogAdd = false">mdi-close</v-icon>
               </v-col>
             </v-row>
 
@@ -62,17 +63,8 @@
               <v-form ref="form">
                 <!-- Course Name -->
                 <v-text-field
-                  v-model="name"
-                  label="Name"
-                  color="black"
-                  variant="outlined"
-                  required
-                  outlined
-                  class="custom-input"
-                ></v-text-field>
-                <v-text-field
-                  v-model="designation"
-                  label="Designation"
+                  v-model="catName"
+                  label="Category Name"
                   color="black"
                   variant="outlined"
                   required
@@ -80,19 +72,20 @@
                   class="custom-input"
                 ></v-text-field>
 
-                <v-text-field
+                <!-- Course Description -->
+                <v-textarea
                   v-model="desc"
-                  label="Description"
+                  label="Category Description"
                   color="black"
                   variant="outlined"
                   required
                   outlined
                   class="custom-input"
-                ></v-text-field>
+                ></v-textarea>
 
                 <!-- Submit Button -->
                 <v-btn
-                  @click="validateReview"
+                  @click="validateCourseInput"
                   type="submit"
                   style="
                     background-color: #0b5de1;
@@ -101,7 +94,7 @@
                     height: 50px;
                   "
                 >
-                  <span class="white--text px-8">Add Review</span>
+                  <span class="white--text px-8">Add Course</span>
                 </v-btn>
               </v-form>
             </v-card-text>
@@ -112,120 +105,129 @@
 
     <!--               -->
 
-    <!-- List Review -->
+    <!-- List Courses -->
 
-    <v-row justify="start" class="pa-8">
+    <v-row justify="start" class="pa-5">
       <v-col cols="12">
-        <v-row justify="start" class="pa-2">
+        <v-row justify="start" class="pa-1">
           <v-col
             cols="5"
             sm="6"
             lg="4"
             class="text-left pa-2"
-            v-for="(item, i) in reviewlist"
+            v-for="(item, i) in catlist"
             :key="i"
           >
             <v-card
               rounded="lg"
               elevation="6"
-              style="height: 350px; margin-top: 10px"
+              class="bg1"
+              style="height: 480px; margin-top: 50px"
             >
+              <!-- <router-link :to="'/singleView'" style="text-decoration: none"> -->
               <v-row justify="center" class="pa-4">
                 <v-col cols="12">
                   <router-link
-                    :to="'/reviewsingleView?id=' + item._id"
+                    :to="'/catsingleView?id=' + item._id"
                     style="text-decoration: none"
                   >
                     <v-img
-                      src="../../assets/images/review_logo.png"
+                      src="../../assets/images/course_cat.png"
                       alt="Profile"
-                      width="100px"
-                      height="100px"
-                      class="mx-auto"
+                      width="100%"
                     ></v-img>
                   </router-link>
                 </v-col>
-                <v-col cols="12" class="text-center pa-0">
-                  <span
-                    class="analyticsValue"
-                    style="
-                      font-weight: bold;
-                      font-size: 25px;
-                      color: black;
-                      font-family: 'poppinsRegular';
-                    "
-                  >
-                    {{ item.name }}
-                  </span>
-                </v-col>
-                <v-col cols="6" class="text-center pa-0">
-                  <span
-                    class="analyticsValue"
-                    style="
-                      font-weight: bold;
-                      font-size: 15px;
-                      color: rgb(64, 8, 247);
-                      font-family: 'poppinsRegular';
-                    "
-                  >
-                    {{ item.designation }}
-                  </span>
-                </v-col>
-                <v-col cols="12" class="text-left">
-                  <!-- Add margin-top for the description -->
-                  <span
-                    class="analyticsValue pa-0"
-                    style="
-                      font-size: 15px;
-                      color: black;
-                      font-family: 'poppinsRegular';
-                      white-space: pre-line;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                    "
-                  >
-                    {{ item.desc.slice(0, 50) }}
-                  </span>
-                  <span v-if="item.desc.length > 50"> .... </span>
-                </v-col>
-                <v-col cols="12" class="text-center pa-1">
-                  <v-btn
-                    @click="(openEditDialog = true), (editItem = item)"
-                    style="
-                      background-color: #2196f3;
-                      color: #ffffff;
-                      width: 40%;
-                      margin-right: 3%;
-                    "
-                  >
-                    <span class="white--text px-2">Edit</span>
-                  </v-btn>
-                  <v-btn
-                    @click="(deleteDialog = true), (delItem = item)"
-                    style="
-                      background-color: #ff5252;
-                      color: #ffffff;
-                      width: 40%;
-                    "
-                  >
-                    <span class="white--text px-2">Delete</span>
-                  </v-btn>
+                <v-col cols="12" lg="12" xl="12">
+                  <v-row justify="center">
+                    <v-col cols="12" class="text-center">
+                      <span
+                        class="analyticsValue"
+                        style="
+                          font-weight: bold;
+                          font-size: 25px;
+                          color: black;
+                          font-family: 'notoSansBalck';
+                        "
+                      >
+                        {{ item.catName }}</span
+                      >
+                    </v-col>
+                    <v-col cols="12" class="text-left">
+                      <span
+                        class="analyticsValue"
+                        style="
+                          font-size: 15px;
+                          text-align: center;
+                          color: black;
+                          font-family: 'notoSansLight';
+                          white-space: pre-line; /* Preserve newline characters */
+                          vertical-align: middle; /* Vertical alignment */
+                          overflow: hidden; /* Optional: Handle overflow */
+                          text-overflow: ellipsis;
+                        "
+                      >
+                        {{ item.desc.slice(0, 50) }}
+                      </span>
+                      <span v-if="item.desc.length > 50"> .... </span>
+                    </v-col>
+
+                    <v-col cols="12" class="text-left">
+                      <v-btn
+                        @click="(openEditDialog = true), (editItem = item)"
+                        style="
+                          background-color: #2196f3; /* Blue color */
+                          color: #ffffff;
+                          width: 48%;
+                          margin-right: 3%;
+                        "
+                      >
+                        <!-- <v-icon>mdi-pencil</v-icon> -->
+                        <span class="white--text px-2">Edit </span>
+                      </v-btn>
+
+                      <v-btn
+                        @click="(deleteDialog = true), (delItem = item)"
+                        style="
+                          background-color: #ff5252; /* Red color */
+                          color: #ffffff;
+                          width: 48%;
+                        "
+                      >
+                        <!-- <v-icon>mdi-delete</v-icon>  -->
+                        <span class="white--text px-2">Delete </span>
+                      </v-btn>
+                    </v-col>
+                  </v-row>
                 </v-col>
               </v-row>
+              <!-- </router-link> -->
             </v-card>
           </v-col>
         </v-row>
       </v-col>
     </v-row>
+    <!-- <v-row justify="center" v-if="catlist">
+              <v-col cols="12" v-if="catlist.length > 0">
+                <v-pagination
+                  size="small"
+                  color="#1c5078"
+                  style="color: #1c5078 !important"
+                  v-model="page"
+                  :length="Pagelength"
+                >
+                </v-pagination>
+              </v-col>
+            </v-row> -->
 
-    <!-- Edit review -->
+    <!-- Edit course -->
 
     <v-dialog v-model="openEditDialog" width="600px" persistent>
       <v-card class="pa-4" style="margin-top: 40px">
         <v-row>
           <v-col cols="11">
             <v-card-title class="text-h5 text-center" style="color: #0b5de1"
-              >EDIT REVIEW</v-card-title
+              >EDIT CATEGORY DETAILS</v-card-title
             >
           </v-col>
           <v-col cols="1">
@@ -234,49 +236,43 @@
         </v-row>
 
         <v-card-text>
-          <v-text-field
-            v-model="editItem.name"
-            label=" Name"
-            color="black"
-            variant="outlined"
-            required
-            outlined
-            class="custom-input"
-          ></v-text-field>
-          <v-text-field
-            v-model="editItem.designation"
-            label=" Designation"
-            color="black"
-            variant="outlined"
-            required
-            outlined
-            class="custom-input"
-          ></v-text-field>
+          <v-form ref="form">
+            <!-- Course Name -->
+            <v-text-field
+              v-model="editItem.catName"
+              label="Course Name"
+              color="black"
+              variant="outlined"
+              required
+              outlined
+              class="custom-input"
+            ></v-text-field>
 
-          <!-- Course Description -->
-          <v-textarea
-            v-model="editItem.desc"
-            label="Description"
-            color="black"
-            variant="outlined"
-            required
-            outlined
-            class="custom-input"
-          ></v-textarea>
+            <!-- Course Description -->
+            <v-textarea
+              v-model="editItem.desc"
+              label="Course Description"
+              color="black"
+              variant="outlined"
+              required
+              outlined
+              class="custom-input"
+            ></v-textarea>
 
-          <!-- Submit Button -->
-          <v-btn
-            type="submit"
-            @click="editReview(editItem)"
-            style="
-              background-color: #0b5de1;
-              color: #ffffff;
-              width: 600px;
-              height: 50px;
-            "
-          >
-            <span class="white--text px-8">SAVE</span>
-          </v-btn>
+            <!-- Submit Button -->
+            <v-btn
+              type="submit"
+              @click="editCourse(editItem)"
+              style="
+                background-color: #0b5de1;
+                color: #ffffff;
+                width: 600px;
+                height: 50px;
+              "
+            >
+              <span class="white--text px-8">SAVE</span>
+            </v-btn>
+          </v-form>
         </v-card-text>
       </v-card></v-dialog
     >
@@ -294,10 +290,10 @@
         </v-row>
 
         <v-card-text>
-          Are you sure you want to delete this review?
+          Are you sure you want to delete this course?
         </v-card-text>
         <v-card-actions>
-          <v-btn @click="deleteReview(delItem)" color="red">Delete</v-btn>
+          <v-btn @click="deleteCourse(delItem)" color="red">Delete</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -317,15 +313,14 @@ export default {
   data() {
     return {
       ServerError: false,
-      name: null,
-      designation: null,
+      catName: null,
       desc: null,
       snackbar: false,
       msg: "",
       timeoutDuration: 1000,
       loading: false,
-      reviewlist: [],
-      dialogAddReview: false,
+      catlist: [],
+      dialogAdd: false,
       openEditDialog: false,
       editItem: "",
       deleteDialog: false,
@@ -348,7 +343,7 @@ export default {
       this.appLoading = true;
       axios({
         method: "GET",
-        url: "/reviews/list",
+        url: "/category/list",
         headers: {
           token: localStorage.getItem("token"),
         },
@@ -359,7 +354,7 @@ export default {
             this.msg = response.data.msg;
             console.log(response.data);
             // this.loading = false;
-            this.reviewlist = response.data.reviews;
+            this.catlist = response.data.reviews;
           } else {
             this.appLoading = false;
             this.msg = response.data.msg;
@@ -372,43 +367,35 @@ export default {
           console.log(err);
         });
     },
-    validateReview() {
-      if (!this.name) {
-        this.msg = "Please provide a name";
-        this.snackbar = true;
-        setTimeout(() => {
-          this.snackbar = false;
-        }, this.timeoutDuration);
-        return false;
-      } else if (!this.designation) {
-        this.msg = "Please provide a designation";
+    validateCourseInput() {
+      if (!this.catName) {
+        this.msg = "Please provide a course name";
         this.snackbar = true;
         setTimeout(() => {
           this.snackbar = false;
         }, this.timeoutDuration);
         return false;
       } else if (!this.desc) {
-        this.msg = "Please provide a description";
+        this.msg = "Please provide a course description";
         this.snackbar = true;
         setTimeout(() => {
           this.snackbar = false;
         }, this.timeoutDuration);
         return false;
       } else {
-        this.addReview();
+        this.addCourse();
       }
     },
-    editReview(id) {
+    editCourse(id) {
       this.appLoading = true;
       axios({
         method: "POST",
-        url: "/reviews/update",
+        url: "/category/update",
         headers: {
           token: localStorage.getItem("token"),
         },
         data: {
-          name: this.editItem.name,
-          designation: this.editItem.designation,
+          catName: this.editItem.catName,
           desc: this.editItem.desc,
           id: id._id,
         },
@@ -431,11 +418,11 @@ export default {
           console.log(err);
         });
     },
-    deleteReview(id) {
+    deleteCourse(id) {
       this.appLoading = true;
       axios({
         method: "POST",
-        url: "/reviews/delete",
+        url: "/category/delete",
         headers: {
           token: localStorage.getItem("token"),
         },
@@ -462,17 +449,16 @@ export default {
           console.log(err);
         });
     },
-    addReview() {
+    addCourse() {
       this.appLoading = true;
       axios({
         method: "POST",
-        url: "/reviews/form",
+        url: "/category/addcoursecategory",
         headers: {
           token: localStorage.getItem("token"),
         },
         data: {
-          name: this.name,
-          designation: this.designation,
+          catName: this.catName,
           desc: this.desc,
         },
       })
@@ -481,8 +467,7 @@ export default {
             this.appLoading = false;
             this.msg = response.data.msg;
             this.snackbar = true;
-            this.dialogAddReview = false;
-            this.getCategory();
+            this.dialogAdd = false;
           } else {
             this.appLoading = false;
             this.msg = response.data.msg;

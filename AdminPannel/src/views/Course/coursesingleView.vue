@@ -12,7 +12,7 @@
     <v-row>
       <v-col>
         <!-- Toolbar with "Add About Us" button -->
-        <v-card color="#87b2f8" height="60px">
+        <v-card color="#81bec9" height="60px">
           <v-row justify="censtter">
             <v-col
               cols="12"
@@ -30,16 +30,90 @@
       </v-col>
     </v-row>
 
-    <v-row justify="center" text-align="center">
-      <v-col cols="12" sm="8" md="6" class="mt-4">
-        <!-- Adjust the margin-top as needed -->
-        <v-card class="elevation-5"   >
-          <v-img
-            src="../../assets/images/course_cat.png"
-            alt="Profile"
+<v-row justify="center">
+    <v-col cols="12" class="text-center">
+        
+        <span style="font-family: 'poppinsBold'; font-size: 25px">{{ courseView.courseName }}</span>
+    </v-col>
+    <v-col cols="12" class="text-right">
+        
+        <span style="font-family: 'poppinsBold'; font-size: 18px; color: rgb(252, 216, 10);">Course Duration : </span><span style="font-family: 'poppinsBold'; font-size: 18px; " > {{ courseView.duration }}</span>
+    </v-col>
+    <v-col cols="12">
+          <v-card>
+            <v-img
+            src="../../assets/images/course_logo.png"
+              max-height="325"
+              cover
+              class="bg-grey-lighten-2"
+            ></v-img>
            
-            
-          ></v-img>
+          </v-card>
+        </v-col>
+  <v-col cols="12">
+    <span style="font-family: 'poppinsBold'; font-size: 25px">Course Overview</span><br><br>
+    <span style="font-family: 'poppinsRegular'; font-size: 18px">{{ courseView.overview }}</span>
+  </v-col>
+  <v-col cols="12">
+    <span style="font-family: 'poppinsBold'; font-size: 25px">Course Information</span><br><br>
+    <span style="font-family: 'poppinsRegular'; font-size: 18px">{{ courseView.course_info }}</span>
+  </v-col>
+  <v-col cols="12">
+    <span style="font-family: 'poppinsBold'; font-size: 25px">Certificate Names</span><br><br>
+            <v-icon color="rgb(252, 216, 10)">mdi-information</v-icon>
+            <span
+              class="analyticsValue pa-3"
+              style="
+                font-weight: bold;
+                font-size: 20px;
+                color: rgb(252, 216, 10);
+                font-family: 'poppinsRegular';
+              "
+            >
+              {{ courseView.certi_name1 }}
+            </span>
+          </v-col>
+
+          <v-col cols="12">
+            <v-icon color="rgb(252, 216, 10)">mdi-information</v-icon>
+            <span
+              class="analyticsValue pa-3"
+              style="
+                font-weight: bold;
+                color: rgb(252, 216, 10);
+                font-size: 20px;
+                font-family: 'poppinsRegular';
+              "
+            >
+              {{ courseView.certi_name2 }}
+            </span>
+          </v-col>
+          <v-col cols="12">
+            <v-icon color="rgb(252, 216, 10)">mdi-information</v-icon>
+            <span
+              class="analyticsValue pa-3"
+              style="
+                font-weight: bold;
+                color: rgb(252, 216, 10);
+                font-size: 20px;
+                font-family: 'poppinsRegular';
+              "
+            >
+              {{ courseView.certi_name3 }}
+            </span>
+          </v-col>
+          <v-col cols="12">
+    <span style="font-family: 'poppinsBold'; font-size: 25px">Category</span><br><br>
+    <span style="font-family: 'poppinsRegular'; font-size: 18px">{{ courseView.category }}</span>
+  </v-col>
+</v-row>
+
+
+    <!-- <v-row justify="center" text-align="center">
+      <v-col cols="12" sm="8" md="6" class="mt-4">
+        
+        <v-card class="elevation-5">
+          <v-img src="../../assets/images/course_cat.png" alt="Profile"></v-img>
           <v-card-title class="text-h5 white--text text-center">
             {{ catView.catName }}
           </v-card-title>
@@ -48,17 +122,16 @@
             {{ catView.desc }}
           </v-card-subtitle>
           <v-card-text>
-            <!-- Display other details of the course category -->
-            <!-- Example: {{ category.someOtherDetail }} -->
+            
           </v-card-text>
         </v-card>
       </v-col>
-    </v-row>
+    </v-row> -->
   </div>
 </template>
-
-
-<script>
+  
+  
+  <script>
 import axios from "axios";
 // import store from "../../store";
 
@@ -70,7 +143,7 @@ export default {
       msg: "",
       timeoutDuration: 1000,
       loading: false,
-      catView: {},
+      courseView: {},
       // courseNameRules: [
       //   (v) => !!v || "Course Name is required",
       // ],
@@ -78,14 +151,14 @@ export default {
     };
   },
   beforeMount() {
-    this.getCategory();
+    this.getCourse();
   },
   methods: {
-    getCategory() {
+    getCourse() {
       this.appLoading = true;
       axios({
         method: "post",
-        url: "/category/singleview",
+        url: "/courses/singleview",
         headers: {
           token: localStorage.getItem("token"),
         },
@@ -99,7 +172,7 @@ export default {
             this.msg = response.data.msg;
             console.log(response.data);
             // this.loading = false;
-            this.catView = response.data.data;
+            this.courseView = response.data.data;
           } else {
             this.appLoading = false;
             this.msg = response.data.msg;
@@ -115,8 +188,8 @@ export default {
   },
 };
 </script>
-
-<style scoped>
+  
+  <style scoped>
 .custom-input {
   margin-bottom: 20px;
 }
@@ -125,3 +198,4 @@ export default {
   width: 100%;
 }
 </style>
+  

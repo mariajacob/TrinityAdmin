@@ -30,13 +30,35 @@ const routes = [
         },
          
         {
-            path: "/courseList",
-            name: "courseList",
+            path: "/catList",
+            name: "catList",
             meta: {
                 requiresAuth: true
             },
             component: () =>
-                import("../views/Course/courseList.vue"),
+                import("../views/Course_cat/catList.vue"),
+
+        },
+        
+        {
+            path: "/catsingleView",
+            name: "catsingleView",
+            meta: {
+                requiresAuth: true
+            },
+            component: () =>
+                import("../views/Course_cat/catsingleView.vue"),
+
+        },
+
+        {
+            path: "/listCourse",
+            name: "listCourse",
+            meta: {
+                requiresAuth: true
+            },
+            component: () =>
+                import("../views/Course/listCourse.vue"),
 
         },
         
@@ -123,6 +145,91 @@ const routes = [
             },
             component: () =>
                 import("../views/Disdetails/discoversingleView.vue"),
+
+        },
+        {
+            path: "/listNews",
+            name: "listNews",
+            meta: {
+                requiresAuth: true
+            },
+            component: () =>
+                import("../views/News/listNews.vue"),
+
+        },
+        
+        {
+            path: "/newssingleView",
+            name: "newssingleView",
+            meta: {
+                requiresAuth: true
+            },
+            component: () =>
+                import("../views/News/newssingleView.vue"),
+
+        },
+        {
+            path: "/listTailsection",
+            name: "listTailsection",
+            meta: {
+                requiresAuth: true
+            },
+            component: () =>
+                import("../views/Tail/listTailsection.vue"),
+
+        },
+        
+        {
+            path: "/tailsingleView",
+            name: "tailsingleView",
+            meta: {
+                requiresAuth: true
+            },
+            component: () =>
+                import("../views/Tail/tailsingleView.vue"),
+
+        },
+        {
+            path: "/listContact",
+            name: "listContact",
+            meta: {
+                requiresAuth: true
+            },
+            component: () =>
+                import("../views/Contact/listContact.vue"),
+
+        },
+        
+        {
+            path: "/contactsingleView",
+            name: "contactsingleView",
+            meta: {
+                requiresAuth: true
+            },
+            component: () =>
+                import("../views/Contact/contactsingleView.vue"),
+
+        },
+
+        {
+            path: "/listTeam",
+            name: "listTeam",
+            meta: {
+                requiresAuth: true
+            },
+            component: () =>
+                import("../views/Team/listTeam.vue"),
+
+        },
+        
+        {
+            path: "/teamsingleView",
+            name: "teamsingleView",
+            meta: {
+                requiresAuth: true
+            },
+            component: () =>
+                import("../views/Team/teamsingleView.vue"),
 
         },
         ]

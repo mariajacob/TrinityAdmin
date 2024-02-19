@@ -108,7 +108,7 @@
           </v-col>
           <v-col cols="12" sm="6" lg="4" class="text-left pa-2">
             <v-card rounded="lg" elevation="6" class="bg4" height="150px">
-              <router-link :to="''" style="text-decoration: none">
+              <router-link :to="'listDiscoverdetails'" style="text-decoration: none">
                 <v-row justify="end" class="pa-4">
                   <v-col cols="9" lg="8" xl="7" class="text-left">
                     <v-row justify="center">
@@ -142,7 +142,7 @@
           </v-col>
           <v-col cols="12" sm="6" lg="4" class="text-left pa-2">
             <v-card rounded="lg" elevation="6" class="bg5" height="150px">
-              <router-link :to="''" style="text-decoration: none">
+              <router-link :to="'listNews'" style="text-decoration: none">
                 <v-row justify="end" class="pa-4">
                   <v-col cols="9" lg="8" xl="7" class="text-left">
                     <v-row justify="center">
@@ -176,7 +176,7 @@
           </v-col>
           <v-col cols="12" sm="6" lg="4" class="text-left pa-2">
             <v-card rounded="lg" elevation="6" class="bg6" height="150px">
-              <router-link :to="''" style="text-decoration: none">
+              <router-link :to="'/listContact'" style="text-decoration: none">
                 <v-row justify="end" class="pa-4">
                   <v-col cols="9" lg="8" xl="7" class="text-left">
                     <v-row justify="center">
@@ -210,7 +210,7 @@
           </v-col>
           <v-col cols="12" sm="6" lg="4" class="text-left pa-2">
             <v-card rounded="lg" elevation="6" class="bg7" height="150px">
-              <router-link :to="''" style="text-decoration: none">
+              <router-link :to="'listTailsection'" style="text-decoration: none">
                 <v-row justify="end" class="pa-4">
                   <v-col cols="9" lg="8" xl="7" class="text-left">
                     <v-row justify="center">
@@ -244,7 +244,7 @@
           </v-col>
           <v-col cols="12" sm="6" lg="4" class="text-left pa-2">
             <v-card rounded="lg" elevation="6" class="bg8" height="150px">
-              <router-link :to="'/courseList'" style="text-decoration: none">
+              <router-link :to="'/catList'" style="text-decoration: none">
                 <v-row justify="end" class="pa-4">
                   <v-col cols="9" lg="8" xl="7" class="text-left">
                     <v-row justify="center">
@@ -255,6 +255,41 @@
                       </v-col>
                       <v-col cols="12" class="text-left">
                         <span class="analyticsKey" style="color: white;">COURSE CATEGORY</span>
+
+                        <!-- <span class="itemArrow"> </span> -->
+                      </v-col>
+                    </v-row>
+                  </v-col>
+                  <v-col
+                    cols="3"
+                    xl="4"
+                    class="pt-16 text-center"
+                    align-self="center"
+                  >
+                    <!-- <v-img
+                  src="../../../assets/iconsets/sellers.png"
+                  height="6vh"
+                  contain
+                ></v-img> -->
+                    <v-icon color="white">mdi-book</v-icon>
+                  </v-col>
+                </v-row>
+              </router-link>
+            </v-card>
+          </v-col>
+          <v-col cols="12" sm="6" lg="4" class="text-left pa-2">
+            <v-card rounded="lg" elevation="6" class="bg9" height="150px">
+              <router-link :to="'/listCourse'" style="text-decoration: none">
+                <v-row justify="end" class="pa-4">
+                  <v-col cols="9" lg="8" xl="7" class="text-left">
+                    <v-row justify="center">
+                      <v-col cols="12" class="text-left">
+                        <!-- <span class="analyticsValue">
+                          4</span
+                        > -->
+                      </v-col>
+                      <v-col cols="12" class="text-left">
+                        <span class="analyticsKey" style="color: white;">COURSE </span>
 
                         <!-- <span class="itemArrow"> </span> -->
                       </v-col>
@@ -307,6 +342,9 @@
 }
 .bg8 {
   background-image: linear-gradient(to right,  #44a6a7 0%, #7de7e9 100%);
+}
+.bg9 {
+  background-image: linear-gradient(to right,  #388107 0%, #70bc8b 100%);
 }
 .analyticsKey{
   font-family: poppinsRegular;
